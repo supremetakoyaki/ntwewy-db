@@ -1197,6 +1197,16 @@ namespace NTwewyDb
         }
 
         #region Get Methods
+        public Dictionary<ushort, IGameItem> GetItems()
+        {
+            return GameItems;
+        }
+
+        public Dictionary<int, ushort> GetSaveIndexes()
+        {
+            return SaveIndexes_GlobalIds;
+        }
+
         public IGameItem GetItem(ushort Id)
         {
             if (GameItems.ContainsKey(Id))
@@ -1392,7 +1402,12 @@ namespace NTwewyDb
             return false;
         }
 
-        public bool PinIsMastereable(PinItem Pin)
+        public bool PinIsMasterable(ushort ParticularId)
+        {
+            return PinIsMasterable(GetPinItem(ParticularId));
+        }
+
+        public bool PinIsMasterable(PinItem Pin)
         {
             if (Pin != null)
             {
