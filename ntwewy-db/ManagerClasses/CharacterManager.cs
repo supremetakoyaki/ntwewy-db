@@ -4,8 +4,8 @@ namespace NTwewyDb
 {
     public class CharacterManager
     {
-        #region Dictionaries
-        private Dictionary<int, Character> Characters = new Dictionary<int, Character>()
+        #region Geenerated Dictionaries
+        private readonly Dictionary<int, Character> Characters = new Dictionary<int, Character>()
         {
             { 1, new Character(1, "CHR_Name_0001", (CharacterType)0, (Gender)0) },
             { 2, new Character(2, "CHR_Name_0002", (CharacterType)0, (Gender)1) },

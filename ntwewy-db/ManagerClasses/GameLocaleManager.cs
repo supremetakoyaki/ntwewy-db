@@ -4,8 +4,8 @@ namespace NTwewyDb
 {
     public class GameLocaleManager
     {
-        #region Dictionaries
-        private Dictionary<string, string> ENG = new Dictionary<string, string>
+        #region Generated Dictionaries
+        private readonly Dictionary<string, string> ENG = new Dictionary<string, string>
         {
             { "ABL_Info_9999", "Ability Info" },
             { "ABL_Info_0001", "Slightly increases Attack." },
@@ -3694,7 +3694,7 @@ namespace NTwewyDb
             { "ESPRANK_10", "Uberpsychic" }
         };
 
-        private Dictionary<string, string> JPN = new Dictionary<string, string>
+        private readonly Dictionary<string, string> JPN = new Dictionary<string, string>
         {
             { "ABL_Info_9999", "アビリティInfo" },
             { "ABL_Info_0001", "攻撃で与えるダメージが少しアップする" },
@@ -7383,7 +7383,7 @@ namespace NTwewyDb
             { "ESPRANK_10", "神" },
         };
 
-        private Dictionary<string, string> SPA = new Dictionary<string, string>
+        private readonly Dictionary<string, string> SPA = new Dictionary<string, string>
         {
             { "ABL_Info_9999", "Información de habilidad" },
             { "ABL_Info_0001", "Aumenta ligeramente el ataque." },
@@ -11072,7 +11072,7 @@ namespace NTwewyDb
             { "ESPRANK_10", "Superpsíquico" }
         };
 
-        private Dictionary<string, string> FRE = new Dictionary<string, string>
+        private readonly Dictionary<string, string> FRE = new Dictionary<string, string>
         {
             { "ABL_Info_9999", "Infos sur la capacité" },
             { "ABL_Info_0001", "Augmente légèrement l'attaque." },
@@ -14761,7 +14761,7 @@ namespace NTwewyDb
             { "ESPRANK_10", "Psychissime" }
         };
 
-        private Dictionary<string, string> ITA = new Dictionary<string, string>
+        private readonly Dictionary<string, string> ITA = new Dictionary<string, string>
         {
             { "ABL_Info_9999", "Appunti sulle abilità" },
             { "ABL_Info_0001", "Aumenta leggermente l'Attacco." },
@@ -18450,7 +18450,7 @@ namespace NTwewyDb
             { "ESPRANK_10", "Superpsichico" }
         };
 
-        private Dictionary<string, string> GER = new Dictionary<string, string>
+        private readonly Dictionary<string, string> GER = new Dictionary<string, string>
         {
             { "ABL_Info_9999", "Fähigkeiten-Info" },
             { "ABL_Info_0001", "Erhöht den Angriff etwas." },
