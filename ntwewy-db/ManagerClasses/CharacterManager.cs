@@ -280,6 +280,15 @@ namespace NTwewyDb
         };
         #endregion
 
+        public Character GetCharacter(int Id)
+        {
+            if (Characters.ContainsKey(Id))
+            {
+                return Characters[Id];
+            }
+            return null;
+        }
+
         public string GetCharacterName(int Id)
         {
             if (Characters.ContainsKey(Id))
