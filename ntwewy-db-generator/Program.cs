@@ -69,7 +69,7 @@ namespace NTwewyDbGenerator
             }
 
             StringBuilder Builder = new StringBuilder();
-            Builder.AppendLine("        private Dictionary<ushort, IGameItem> GameItems = new Dictionary<ushort, IGameItem>");
+            Builder.AppendLine("        private readonly Dictionary<ushort, IGameItem> GameItems = new Dictionary<ushort, IGameItem>");
             Builder.AppendLine("        {");
 
             #region Pins
@@ -343,7 +343,7 @@ namespace NTwewyDbGenerator
             dynamic json_array = JsonConvert.DeserializeObject(json_characters);
 
             StringBuilder Builder = new StringBuilder();
-            Builder.AppendLine("        private Dictionary<int, Character> Characters = new Dictionary<int, Character>()");
+            Builder.AppendLine("        private readonly Dictionary<int, Character> Characters = new Dictionary<int, Character>()");
             Builder.AppendLine("        {");
 
             foreach (var charaData in json_array.mTarget)
@@ -378,13 +378,15 @@ namespace NTwewyDbGenerator
         {
             List<string> folders = new List<string>() { "ENG", "SPA", "JPN", "FRE", "ITA", "GER" };
 
+            StringBuilder MainBuilder = new StringBuilder();
+
             foreach (string folder in folders)
             {
                 string[] filePaths = Directory.GetFiles(folder, "*.txt",
                                          SearchOption.TopDirectoryOnly);
 
                 StringBuilder Builder = new StringBuilder();
-                Builder.Append("        private Dictionary<string, string> ");
+                Builder.Append("        private readonly Dictionary<string, string> ");
                 Builder.Append(folder);
                 Builder.AppendLine(" = new Dictionary<string, string>");
                 Builder.AppendLine("        {");
@@ -416,8 +418,10 @@ namespace NTwewyDbGenerator
 
                 Builder.AppendLine("        };");
 
-                File.WriteAllText("output_dictionary_strings_" + folder.ToLower() + ".cs", Builder.ToString());
+                MainBuilder.AppendLine(Builder.ToString());
+                MainBuilder.AppendLine();
             }
+            File.WriteAllText("output_dictionary_strings_ALL.cs", MainBuilder.ToString());
 
             Console.WriteLine("Finished.");
         }
@@ -428,7 +432,7 @@ namespace NTwewyDbGenerator
             dynamic json_array = JsonConvert.DeserializeObject(json_ability);
 
             StringBuilder Builder = new StringBuilder();
-            Builder.AppendLine("        private Dictionary<ushort, Ability> Abilities = new Dictionary<ushort, Ability>()");
+            Builder.AppendLine("        private readonly Dictionary<ushort, Ability> Abilities = new Dictionary<ushort, Ability>()");
             Builder.AppendLine("        {");
 
                         /*
@@ -506,7 +510,7 @@ namespace NTwewyDbGenerator
             dynamic json_array = JsonConvert.DeserializeObject(json_brand);
 
             StringBuilder Builder = new StringBuilder();
-            Builder.AppendLine("        private Dictionary<byte, Brand> Brands = new Dictionary<byte, Brand>()");
+            Builder.AppendLine("        private readonly Dictionary<byte, Brand> Brands = new Dictionary<byte, Brand>()");
             Builder.AppendLine("        {");
 
             foreach (var brandData in json_array.mTarget)
