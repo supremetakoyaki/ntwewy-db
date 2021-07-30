@@ -19,6 +19,7 @@ namespace NTwewyDbGenerator
             Console.WriteLine("2. Game Locale Strings");
             Console.WriteLine("3. Ability");
             Console.WriteLine("4. Brand");
+            Console.WriteLine("5. Battle Player");
 
             Console.WriteLine();
             Console.Write("Select a dictionary: ");
@@ -43,6 +44,10 @@ namespace NTwewyDbGenerator
 
                 case "4":
                     GenerateBrandData();
+                    break;
+
+                case "5":
+                    GenerateBattlePlayerData();
                     break;
 
                 default:
@@ -549,5 +554,77 @@ namespace NTwewyDbGenerator
             File.WriteAllText("output_dictionary_brands.cs", Builder.ToString());
         }
 
+        static void GenerateBattlePlayerData()
+        {
+            string json_battlecharacter = File.ReadAllText("BattleCharacter.txt");
+            dynamic array_battlecharacter = JsonConvert.DeserializeObject(json_battlecharacter);
+
+            string json_battleplayer = File.ReadAllText("BattlePlayer.txt");
+            dynamic array_battleplayer = JsonConvert.DeserializeObject(json_battleplayer);
+
+            Dictionary<int, int> allcharacterIds = new Dictionary<int, int>();
+            Dictionary<int, int> baseHp = new Dictionary<int, int>();
+            Dictionary<int, int> baseAtk = new Dictionary<int, int>();
+            Dictionary<int, int> baseDef = new Dictionary<int, int>();
+
+
+            foreach (var bcData in array_battlecharacter.mTarget)
+            {
+                int Id = (int)bcData.mId;
+                int characterId = (int)bcData.mAllCharacters;
+                int baseHpval = (int)bcData.mHp;
+                int baseAtkval = (int)bcData.mAttack;
+                int baseDefenseval = (int)bcData.mDefense;
+
+                allcharacterIds.Add(Id, characterId);
+                baseHp.Add(Id, baseHpval);
+                baseAtk.Add(Id, baseAtkval);
+                baseDef.Add(Id, baseDefenseval);
+            }
+
+            StringBuilder Builder = new StringBuilder();
+            Builder.AppendLine("        private readonly Dictionary<int, BattlePlayer> BattlePlayers = new Dictionary<int, BattlePlayer>()");
+            Builder.AppendLine("        {");
+
+
+            foreach (var bpData in array_battleplayer.mTarget)
+            {
+                int Id = (int)bpData.mId;
+                int charaId = allcharacterIds[Id];
+                int baseHpval = baseHp[Id];
+                int baseAtkval = baseAtk[Id];
+                int baseDefenseval = baseDef[Id];
+
+                float DropRate = Convert.ToSingle(bpData.mDropRate);
+                int baseSense = (int)bpData.mSense;
+                int sortOrder = (int)bpData.mSortOrder;
+
+
+
+                Builder.Append("            { ");
+                Builder.Append(Id);
+                Builder.Append(", ");
+
+                //        public BattlePlayer(int id, int globalId, float dropRate, int baseHp, int baseAtk, int baseDef, int baseSense, byte sortOrder)
+
+                string Constructor = string.Format("new BattlePlayer({0}, {1}, {2}f, {3}, {4}, {5}, {6}, {7})",
+                    Id,
+                    charaId,
+                    DropRate,
+                    baseHpval,
+                    baseAtkval,
+                    baseDefenseval,
+                    baseSense,
+                    sortOrder
+                    );
+
+                Builder.Append(Constructor);
+                Builder.AppendLine(" },");
+
+            }
+
+            Builder.AppendLine("        };");
+            File.WriteAllText("output_dictionary_battleplayers.cs", Builder.ToString());
+        }
     }
 }

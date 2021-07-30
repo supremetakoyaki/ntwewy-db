@@ -175,7 +175,18 @@ namespace NTwewyDb
             { 200012, new Character(200012, "ENM_Name_0203", (CharacterType)2, (Gender)2) }
         };
 
-        private Dictionary<int, int> Levels = new Dictionary<int, int>()
+        private readonly Dictionary<int, BattlePlayer> BattlePlayers = new Dictionary<int, BattlePlayer>()
+        {
+            { 1, new BattlePlayer(1, 1, 1f, 70, 15, 12, 20, 1) },
+            { 2, new BattlePlayer(2, 2, 0f, 299, 99, 99, 99, 5) },
+            { 3, new BattlePlayer(3, 3, 0f, 90, 15, 10, 15, 2) },
+            { 4, new BattlePlayer(4, 4, 0f, 100, 20, 15, 15, 3) },
+            { 5, new BattlePlayer(5, 5, 0f, 321, 85, 80, 45, 4) },
+            { 6, new BattlePlayer(6, 6, 0f, 428, 151, 162, 173, 6) },
+            { 7, new BattlePlayer(7, 7, 0f, 373, 23, 61, 31, 7) }
+        };
+
+        private readonly Dictionary<int, int> Levels = new Dictionary<int, int>()
         {
             { 1, 0 },
             { 2, 70 },
@@ -285,6 +296,15 @@ namespace NTwewyDb
             if (Characters.ContainsKey(Id))
             {
                 return Characters[Id];
+            }
+            return null;
+        }
+
+        public BattlePlayer GetBattlePlayer(int Id)
+        {
+            if (BattlePlayers.ContainsKey(Id))
+            {
+                return BattlePlayers[Id];
             }
             return null;
         }
