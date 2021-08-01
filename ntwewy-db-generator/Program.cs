@@ -20,6 +20,8 @@ namespace NTwewyDbGenerator
             Console.WriteLine("3. Ability");
             Console.WriteLine("4. Brand");
             Console.WriteLine("5. Battle Player");
+            Console.WriteLine("6. Skill & Skill Tree");
+            Console.WriteLine("7. Shop");
 
             Console.WriteLine();
             Console.Write("Select a dictionary: ");
@@ -48,6 +50,14 @@ namespace NTwewyDbGenerator
 
                 case "5":
                     GenerateBattlePlayerData();
+                    break;
+
+                case "6":
+                    GenerateSkillData();
+                    break;
+
+                case "7":
+                    GenerateShopData();
                     break;
 
                 default:
@@ -625,6 +635,134 @@ namespace NTwewyDbGenerator
 
             Builder.AppendLine("        };");
             File.WriteAllText("output_dictionary_battleplayers.cs", Builder.ToString());
+        }
+
+        static void GenerateSkillData()
+        {
+            string json_skill = File.ReadAllText("Skill.txt");
+            dynamic array_skill = JsonConvert.DeserializeObject(json_skill);
+
+            StringBuilder Builder = new StringBuilder();
+            Builder.AppendLine("        private readonly Dictionary<ushort, Skill> Skills = new Dictionary<ushort, Skill>()");
+            Builder.AppendLine("        {");
+
+            foreach (var skillData in array_skill.mTarget)
+            {
+                int Id = (int)skillData.mId;
+                string Name = (string)skillData.mName;
+                string Info = (string)skillData.mInfo;
+                int PointsReq = (int)skillData.mPoint;
+
+                string paramArray = "null";
+                List<double> paramList = skillData.mParameter.ToObject<List<double>>();
+
+                if (paramList.Count > 0)
+                {
+                    paramArray = "new float[] { " + string.Join("f,", paramList) + " }";
+                }
+
+                int shopReward = (int)skillData.mShopReward;
+                string dialogImage = (string)skillData.mDialogImage;
+                int SaveIndex = (int)skillData.mSaveIndex;
+
+                Builder.Append("            { ");
+                Builder.Append(Id);
+                Builder.Append(", ");
+
+                //        public Skill(ushort id, string name, string info, ushort pointsRequired, float[] parameters, int shopReward, string dialogImage, int saveIndex)
+                string Constructor = string.Format("        new Skill({0}, \"{1}\", \"{2}\", {3}, {4}, {5}, {6}, {7})",
+                    Id,
+                    Name,
+                    Info,
+                    PointsReq,
+                    paramArray,
+                    shopReward,
+                    string.IsNullOrWhiteSpace(dialogImage) ? "null" : "\"" + dialogImage + "\"",
+                    SaveIndex
+                    );
+
+                Builder.Append(Constructor);
+                Builder.AppendLine(" },");
+            }
+
+            Builder.AppendLine("        };");
+            File.WriteAllText("output_dictionary_skills.cs", Builder.ToString());
+
+
+            string json_skilltree = File.ReadAllText("SkillTree.txt");
+            dynamic array_skilltree = JsonConvert.DeserializeObject(json_skilltree);
+
+            Builder = new StringBuilder();
+            Builder.AppendLine("        private readonly Dictionary<ushort, SkillTree> SkillTreeItems = new Dictionary<ushort, SkillTree>()");
+            Builder.AppendLine("        {");
+
+            foreach (var treeData in array_skilltree.mTarget)
+            {
+
+                int Id = (int)treeData.mId;
+                string CharaName = (string)treeData.mCharaName;
+                string charaInfoarray = "null";
+                List<string> charaInfoList = treeData.mCharaInfo.ToObject<List<string>>();
+
+                if (charaInfoList.Count > 0)
+                {
+                    charaInfoarray = "new string[] { \"" + string.Join("\",\"", charaInfoList) + "\" }";
+                }
+
+                bool InfoUpdateIfConnect = (bool)treeData.mInfoUpdateIfConnect;
+                int InfoUpdateScenario = (int)treeData.mInfoUpdateScenario;
+                string DayText = (string)treeData.mDayText;
+                string PlaceText = (string)treeData.mPlaceText;
+                int shopId = (int)treeData.mShop;
+                int ReleaseValue = (int)treeData.mReleaseValue;
+                int Board = (int)treeData.mBoard;
+                int SkillId = (int)treeData.mSkill;
+
+                string CharaIcon = treeData.mCharaIcon.ToObject<List<string>>()[0];
+                int EntryDay = (int)treeData.mEntryDay;
+                int ConnectDay = (int)treeData.mConnectDay;
+                int ParentId = (int)treeData.mParent;
+                int SaveIndex = (int)treeData.mSaveIndex;
+
+                //        public SkillTree(short id, )
+
+
+                Builder.Append("            { ");
+                Builder.Append(Id);
+                Builder.Append(", ");
+
+                string Constructor = string.Format("        new SkillTree({0}, \"{1}\", {2}, {3}, {4}, \"{5}\", \"{6}\", {7}, {8}, {9}, {10}, \"{11}\", {12}, {13}, {14}, {15})",
+                    Id,
+                    CharaName,
+                    charaInfoarray,
+                    InfoUpdateIfConnect.ToString().ToLower(),
+                    InfoUpdateScenario,
+                    DayText,
+                    PlaceText,
+                    shopId,
+                    ReleaseValue,
+                    Board,
+                    SkillId,
+                    CharaIcon,
+                    EntryDay,
+                    ConnectDay,
+                    ParentId,
+                    SaveIndex
+    );
+
+                Builder.Append(Constructor);
+
+                Builder.AppendLine(" },");
+            }
+
+            Builder.AppendLine("        };");
+            File.WriteAllText("output_dictionary_skilltree.cs", Builder.ToString());
+
+        }
+
+        static void GenerateShopData()
+        {
+            //
         }
     }
 }
