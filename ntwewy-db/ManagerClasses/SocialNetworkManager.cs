@@ -220,12 +220,35 @@ namespace NTwewyDb
             { 107,         new SkillTree(107, "CHR_Name_0138", new string[] { "CHR_Info_0138_1","CHR_Info_0138_2" }, true, -1, "Day_Name_w2d7", "Com_Blank", 36, 3, -1, 95, "CHR_Shop_044", 14, 14, 65, 107) },
             { 108,         new SkillTree(108, "CHR_Name_0139", new string[] { "CHR_Info_0139_1","CHR_Info_0139_2" }, true, -1, "Day_Name_w2d7", "Com_Blank", 37, 3, -1, 96, "CHR_Shop_045", 14, 14, 71, 108) },
             { 109,         new SkillTree(109, "CHR_Name_0134", new string[] { "CHR_Info_0134_1","CHR_Info_0134_2" }, true, -1, "Day_Name_w3d2", "Com_Blank", 32, 3, -1, 97, "CHR_Shop_046", 16, 16, 32, 109) },
-            { 110,         new SkillTree(110, "CHR_Name_0147", new string[] { "CHR_Info_0147_1","CHR_Info_0147_2" }, true, -1, "Day_Name_w2d2", "Com_Blank", 45, 3, -1, 94, "CHR_Shop_047", 9, 9, 106, 110) },
+            { 110,         new SkillTree(110, "CHR_Name_0147", new string[] { "CHR_Info_0147_1","CHR_Info_0147_2" }, true, -1, "Day_Name_w2d2", "Com_Blank", 45, 3, -1, 94, "CHR_Shop_047", 9, 9, 106, 110) }
         };
+
+        private Dictionary<int, SkillTree> SkillTreeItems_SaveIndexed;
+
+        public SocialNetworkManager()
+        {
+            SkillTreeItems_SaveIndexed = SkillTreeItems.ToDictionary(s => s.Value.SaveIndex, s => s.Value);
+        }
+
 
         public Dictionary<ushort, SkillTree> GetSkillTreeItems(int ParentId)
         {
-            return SkillTreeItems.Where(s => s.Value.ParentId == ParentId).ToDictionary(s => s.Key, s => s.Value);
+            // There are unused entries in the game. We don't want them.
+            return SkillTreeItems.Where(s => s.Value.ParentId == ParentId && s.Value.SkillId >= 0).ToDictionary(s => s.Key, s => s.Value);
+        }
+
+        public Dictionary<int, SkillTree> GetSaveIndexedTreeItems()
+        {
+            return SkillTreeItems_SaveIndexed;
+        }
+
+        public SkillTree GetSkillTreeItemWithSaveIndex(int SaveIndex)
+        {
+            if (SkillTreeItems_SaveIndexed.ContainsKey(SaveIndex))
+            {
+                return SkillTreeItems_SaveIndexed[SaveIndex];
+            }
+            return null;
         }
 
         public SkillTree GetSkillTreeItem(ushort Id)

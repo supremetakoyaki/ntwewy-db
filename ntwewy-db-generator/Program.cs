@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace NTwewyDbGenerator
@@ -703,6 +704,7 @@ namespace NTwewyDbGenerator
                 string CharaName = (string)treeData.mCharaName;
                 string charaInfoarray = "null";
                 List<string> charaInfoList = treeData.mCharaInfo.ToObject<List<string>>();
+                charaInfoList = charaInfoList.Distinct().ToList();
 
                 if (charaInfoList.Count > 0)
                 {
