@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Xml.Linq;
 
 namespace NTwewyDbGenerator
 {
@@ -23,6 +24,7 @@ namespace NTwewyDbGenerator
             Console.WriteLine("5. Battle Player");
             Console.WriteLine("6. Skill & Skill Tree");
             Console.WriteLine("7. Shop");
+            Console.WriteLine("8. Attack Element");
 
             Console.WriteLine();
             Console.Write("Select a dictionary: ");
@@ -59,6 +61,10 @@ namespace NTwewyDbGenerator
 
                 case "7":
                     GenerateShopData();
+                    break;
+
+                case "8":
+                    GenerateAttackElementData();
                     break;
 
                 default:
@@ -121,7 +127,7 @@ namespace NTwewyDbGenerator
                 Builder.Append(globalId);
                 Builder.Append(", ");
 
-                string Constructor = string.Format("new PinItem({0}, {1}, {2}, \"{3}\", \"{4}\", \"{5}\", {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {21},  {22}, {23}, {24})",
+                string Constructor = string.Format("new PinItem({0}, {1}, {2}, \"{3}\", \"{4}\", \"{5}\", {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {21},  {22}, {23}, {24}, {25})",
                     globalId,
                     pinId,
                     "ItemType.Pin",
@@ -146,7 +152,8 @@ namespace NTwewyDbGenerator
                     pinData.mBadgeClass,
                     pinData.mEvolutionLevel,
                     pinData.mEcolutionCommon,
-                    evolutionarray);
+                    evolutionarray,
+                    pinData.mMashupElement);
 
                 Builder.Append(Constructor);
 
@@ -296,7 +303,7 @@ namespace NTwewyDbGenerator
             #endregion
 
             #region CD
-            string json_musicnames = File.ReadAllText("ENG/MusicName.txt");
+            string json_musicnames = File.ReadAllText("MusicName.txt");
             dynamic array_musicnames = JsonConvert.DeserializeObject(json_musicnames);
 
             Dictionary<int, string> MusicNames = new Dictionary<int, string>();
@@ -764,7 +771,104 @@ namespace NTwewyDbGenerator
 
         static void GenerateShopData()
         {
-            //
+            string json_shop = File.ReadAllText("Shop.txt");
+            dynamic array_shop = JsonConvert.DeserializeObject(json_shop);
+
+            StringBuilder Builder = new StringBuilder();
+            Builder.AppendLine("        private readonly Dictionary<ushort, Shop> Shops = new Dictionary<ushort, Shop>()");
+            Builder.AppendLine("        {");
+
+            foreach (var shopData in array_shop.mTarget)
+{
+                int Id = (int)shopData.mId;
+                string Name = (string)shopData.mName;
+                string ShopCategory = (string)shopData.mShopCategory;
+                int ShopType = (int)shopData.mShopType;
+                int Brand = (int)shopData.mBrand; 
+                int SymbolItem = (int)shopData.mSymbolItem;
+                int SkillId = (int)shopData.mSkill;
+                int Staff = (int)shopData.mStaff;
+                int Bgm = (int)shopData.mBgmLabel;
+                string Background = (string)shopData.mBgPath;
+                bool ChangeBg = (bool)shopData.mChangeBg;
+                int SaveIndex = (int)shopData.mSaveIndex;
+
+                string regularbuy = "new ushort[] { " + string.Join(',', shopData.mRegularBuy.ToObject<List<int>>()) + " }";
+                string regularday = "new ushort[] { " + string.Join(',', shopData.mRegularDay.ToObject<List<int>>()) + " }";
+                string regularvip = "new ushort[] { " + string.Join(',', shopData.mRegularVip.ToObject<List<int>>()) + " }";
+                string ShopTalk = "new ushort[] { " + string.Join(',', shopData.mShoptalk.ToObject<List<int>>()) + " }";
+
+
+                Builder.Append("            { ");
+                Builder.Append(Id);
+                Builder.Append(", ");
+
+                //        public Shop(int id, string name, string shopCategory, int shopType, byte brand, ushort symbolItem, int skillId, int staffId, ushort bgm, string background, bool changeBackground, int saveIndex, ushort[] regularBuy, ushort[] regularDay, ushort[] regularVip, ushort[] shopTalk)
+
+                string Constructor = string.Format("new Shop({0}, \"{1}\", \"{2}\", {3}, {4}, {5}, {6}, {7}, {8}, \"{9}\", {10}, {11}, {12}, {13}, {14}, {15})",
+                    Id,
+                    Name,
+                    ShopCategory,
+                    ShopType,
+                    Brand,
+                    SymbolItem,
+                    SkillId,
+                    Staff,
+                    Bgm,
+                    Background,
+                    ChangeBg ? "true" : "false",
+                    SaveIndex,
+                    regularbuy,
+                    regularday,
+                    regularvip,
+                    ShopTalk
+                    );
+
+
+                Builder.Append(Constructor);
+                Builder.AppendLine(" },");
+            }
+
+            Builder.AppendLine("        };");
+            File.WriteAllText("output_dictionary_shops.cs", Builder.ToString());
+
+        }
+
+        static void GenerateAttackElementData()
+        {
+            string json_attackelement = File.ReadAllText("AttackElement.txt");
+            dynamic array_ae = JsonConvert.DeserializeObject(json_attackelement);
+
+            StringBuilder Builder = new StringBuilder();
+            Builder.AppendLine("        private readonly Dictionary<byte, PinAttackElement> AttackElements = new Dictionary<byte, PinAttackElement>()");
+            Builder.AppendLine("        {");
+
+            foreach (var aeData in array_ae.mTarget)
+            {
+                int Id = (int)aeData.mId;
+                string ElementName = (string)aeData.mElementName;
+                string ElementIcon = (string)aeData.mElementIcon;
+                string MashupIcon = (string)aeData.mMashupIcon;
+                int SortIndex = (int)aeData.mSortIndex;
+
+                Builder.Append("            { ");
+                Builder.Append(Id);
+                Builder.Append(", ");
+
+                string Constructor = string.Format("        new PinAttackElement({0}, \"{1}\", \"{2}\", \"{3}\", {4})",
+                    Id,
+                    ElementName,
+                    ElementIcon,
+                    MashupIcon,
+                    SortIndex);
+
+                Builder.Append(Constructor);
+
+                Builder.AppendLine(" },");
+            }
+
+            Builder.AppendLine("        };");
+            File.WriteAllText("output_dictionary_attackelements.cs", Builder.ToString());
         }
     }
 }

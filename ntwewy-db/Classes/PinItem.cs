@@ -34,8 +34,9 @@
 		public byte EvolutionLevel { get; set; }
         public short EvolutionCommon { get; set; }
 		public short[] EvolutionPins { get; set; }
+        public sbyte MashupElement { get; set; }
 
-        public PinItem(ushort globalId, ushort particularId, ItemType type, string name, string info, string sprite, byte brand, int collectionSaveIndex, ushort chanceType, short psych, sbyte inputKey, short atkBoost, float chargeTime, ushort comboCount, float rebootTime, float autoRecoverTime, byte maxLevel, byte levelUpType, float levelUpRate, ushort[] abilities, int sellPrice, byte pinClass, byte evolutionLevel, short evolutionCommon, short[] evolutionPins)
+        public PinItem(ushort globalId, ushort particularId, ItemType type, string name, string info, string sprite, byte brand, int collectionSaveIndex, ushort chanceType, short psych, sbyte inputKey, short atkBoost, float chargeTime, ushort comboCount, float rebootTime, float autoRecoverTime, byte maxLevel, byte levelUpType, float levelUpRate, ushort[] abilities, int sellPrice, byte pinClass, byte evolutionLevel, short evolutionCommon, short[] evolutionPins, sbyte mashupElement)
         {
             GlobalId = globalId;
             ParticularId = particularId;
@@ -62,6 +63,7 @@
             EvolutionLevel = evolutionLevel;
             EvolutionCommon = evolutionCommon;
             EvolutionPins = evolutionPins;
+            MashupElement = mashupElement;
         }
     }
 }
