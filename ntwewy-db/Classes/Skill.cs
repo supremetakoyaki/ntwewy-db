@@ -2,7 +2,7 @@
 {
     public class Skill
     {
-        public ushort Id { get; set; }
+        public sbyte Id { get; set; }
         public string Name { get; set; }
         public string Info { get; set; }
         public ushort PointsRequired { get; set; }
@@ -11,7 +11,7 @@
         public string DialogImage { get; set; }
         public int SaveIndex { get; set; }
 
-        public Skill(ushort id, string name, string info, ushort pointsRequired, float[] parameters, int shopReward, string dialogImage, int saveIndex)
+        public Skill(sbyte id, string name, string info, ushort pointsRequired, float[] parameters, int shopReward, string dialogImage, int saveIndex)
         {
             Id = id;
             Name = name;

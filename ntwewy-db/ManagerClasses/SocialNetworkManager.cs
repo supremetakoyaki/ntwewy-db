@@ -242,6 +242,11 @@ namespace NTwewyDb
             return SkillTreeItems_SaveIndexed;
         }
 
+        public List<Skill> GetSkills()
+        {
+            return Skills.Values.ToList();
+        }
+
         public SkillTree GetSkillTreeItemWithSaveIndex(int SaveIndex)
         {
             if (SkillTreeItems_SaveIndexed.ContainsKey(SaveIndex))

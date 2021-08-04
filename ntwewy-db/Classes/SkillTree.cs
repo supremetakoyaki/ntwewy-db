@@ -12,14 +12,14 @@
         public sbyte ShopId { get; set; }
         public int ReleaseValue { get; set; }
         public int Board { get; set; }
-        public int SkillId { get; set; }
+        public sbyte SkillId { get; set; }
         public string CharacterIcon { get; set; }
         public int EntryDay { get; set; }
         public int ConnectDay { get; set; }
         public short ParentId { get; set; }
         public int SaveIndex { get; set; }
 
-        public SkillTree(short id, string characterName, string[] characterInfo, bool infoUpdateIfConnect, int infoUpdateScenario, string dayText, string placeText, sbyte shopId, int releaseValue, int board, int skillId, string characterIcon, int entryDay, int connectDay, short parentId, int saveIndex)
+        public SkillTree(short id, string characterName, string[] characterInfo, bool infoUpdateIfConnect, int infoUpdateScenario, string dayText, string placeText, sbyte shopId, int releaseValue, int board, sbyte skillId, string characterIcon, int entryDay, int connectDay, short parentId, int saveIndex)
         {
             Id = id;
             CharacterName = characterName;
