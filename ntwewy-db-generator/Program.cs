@@ -25,6 +25,8 @@ namespace NTwewyDbGenerator
             Console.WriteLine("6. Skill & Skill Tree");
             Console.WriteLine("7. Shop");
             Console.WriteLine("8. Attack Element");
+            Console.WriteLine("9. Noisepedia");
+            Console.WriteLine("10. Noise (EnemyData)");
 
             Console.WriteLine();
             Console.Write("Select a dictionary: ");
