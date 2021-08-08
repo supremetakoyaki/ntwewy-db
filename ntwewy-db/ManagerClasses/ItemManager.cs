@@ -1248,12 +1248,12 @@ namespace NTwewyDb
         #endregion
 
         #region QoL dictionaries
-        private Dictionary<ushort, ushort> Pin_GlobalIds = new Dictionary<ushort, ushort>();
-        private Dictionary<ushort, ushort> Clothing_GlobalIds = new Dictionary<ushort, ushort>();
-        private Dictionary<ushort, ushort> Food_GlobalIds = new Dictionary<ushort, ushort>();
-        private Dictionary<ushort, ushort> Book_GlobalIds = new Dictionary<ushort, ushort>();
-        private Dictionary<ushort, ushort> CD_GlobalIds = new Dictionary<ushort, ushort>();
-        private Dictionary<int, ushort> SaveIndexes_GlobalIds = new Dictionary<int, ushort>();
+        private readonly Dictionary<ushort, ushort> Pin_GlobalIds = new Dictionary<ushort, ushort>();
+        private readonly Dictionary<ushort, ushort> Clothing_GlobalIds = new Dictionary<ushort, ushort>();
+        private readonly Dictionary<ushort, ushort> Food_GlobalIds = new Dictionary<ushort, ushort>();
+        private readonly Dictionary<ushort, ushort> Book_GlobalIds = new Dictionary<ushort, ushort>();
+        private readonly Dictionary<ushort, ushort> CD_GlobalIds = new Dictionary<ushort, ushort>();
+        private readonly Dictionary<int, ushort> SaveIndexes_GlobalIds = new Dictionary<int, ushort>();
         #endregion
 
         public ItemManager()

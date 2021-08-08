@@ -223,7 +223,7 @@ namespace NTwewyDb
             { 110,         new SkillTree(110, "CHR_Name_0147", new string[] { "CHR_Info_0147_1","CHR_Info_0147_2" }, true, -1, "Day_Name_w2d2", "Com_Blank", 45, 3, -1, 94, "CHR_Shop_047", 9, 9, 106, 110) }
         };
 
-        private Dictionary<int, SkillTree> SkillTreeItems_SaveIndexed;
+        private readonly Dictionary<int, SkillTree> SkillTreeItems_SaveIndexed;
 
         public SocialNetworkManager()
         {

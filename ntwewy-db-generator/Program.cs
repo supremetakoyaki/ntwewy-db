@@ -69,6 +69,14 @@ namespace NTwewyDbGenerator
                     GenerateAttackElementData();
                     break;
 
+                case "9":
+                    GenerateNoisepediaData();
+                    break;
+
+                case "10":
+                    GenerateNoiseData();
+                    break;
+
                 default:
                     Console.WriteLine("not valid.");
                     break;
@@ -871,6 +879,192 @@ namespace NTwewyDbGenerator
 
             Builder.AppendLine("        };");
             File.WriteAllText("output_dictionary_attackelements.cs", Builder.ToString());
+        }
+
+        static void GenerateNoisepediaData()
+        {
+            string json_noisepedia = File.ReadAllText("EnemyReport.txt");
+            dynamic array_noise = JsonConvert.DeserializeObject(json_noisepedia);
+
+            StringBuilder Builder = new StringBuilder();
+            Builder.AppendLine("        private readonly Dictionary<byte, NoisepediaEntry> Noisepedia = new Dictionary<byte, NoisepediaEntry>()");
+            Builder.AppendLine("        {");
+
+            foreach (var noiseData in array_noise.mTarget)
+            {
+                int Id = (int)noiseData.mId;
+                int SortIndex = (int)noiseData.mSortIndex;
+                int Character = (int)noiseData.mCharacter;
+                string groupcharacter = "null";
+
+                var GroupCharaList = noiseData.mGroupCharacter.ToObject<List<int>>();
+                if (GroupCharaList.Count > 0)
+                {
+                    groupcharacter = "new ushort[] { " + string.Join(",", GroupCharaList) + " }";
+                }
+
+                int NoiseId = (int)noiseData.mEnemydata;
+                string Icon = (string)noiseData.mIcon;
+                int symboltype = (int)noiseData.mSymbolType;
+                string Name = (string)noiseData.mName;
+                string Info = (string)noiseData.mInfo;
+                string IsBoss = (bool)noiseData.mIsBoss ? "true" : "false";
+
+                string weakelements = "null";
+
+                var WeakElementsList = noiseData.mWeak.ToObject<List<int>>();
+                if (WeakElementsList.Count > 0)
+                {
+                    weakelements = "new sbyte[] { " + string.Join(",", WeakElementsList) + " }";
+                }
+
+                string NoiseImage = (string)noiseData.mNoiseImagePath;
+
+                Builder.Append("            { ");
+                Builder.Append(Id);
+                Builder.Append(", ");
+
+                string Constructor = string.Format("        new NoisepediaEntry({0}, {1}, {2}, {3}, {4}, \"{5}\", {6}, \"{7}\", \"{8}\", {9}, {10}, \"{11}\")",
+                    Id,
+                    SortIndex,
+                    Character,
+                    groupcharacter,
+                    NoiseId,
+                    Icon,
+                    symboltype,
+                    Name,
+                    Info,
+                    IsBoss,
+                    weakelements,
+                    NoiseImage);
+
+                Builder.Append(Constructor);
+
+                Builder.AppendLine(" },");
+            }
+
+            Builder.AppendLine("        };");
+            File.WriteAllText("output_dictionary_noisepedia.cs", Builder.ToString());
+        }
+
+        static void GenerateNoiseData()
+        {
+            string json_noisedata = File.ReadAllText("EnemyData.txt");
+            dynamic array_noise = JsonConvert.DeserializeObject(json_noisedata);
+
+            StringBuilder Builder = new StringBuilder();
+            Builder.AppendLine("        private readonly Dictionary<uint, Noise> NoiseData = new Dictionary<uint, Noise>()");
+            Builder.AppendLine("        {");
+
+            foreach (var noiseData in array_noise.mTarget)
+            {
+                int Id = (int)noiseData.mId;
+                int Class = (int)noiseData.mClass;
+                int Type = (int)noiseData.mType;
+                int TypeVersion = (int)noiseData.mTypeVersion;
+                string SoFileName = (string)noiseData.mSoFileName;
+                int ResourceData = (int)noiseData.mResourceData;
+                int BaseParam = (int)noiseData.mBaseParam;
+                string Attack = "new uint[] { " + string.Join(',', noiseData.mAttack.ToObject<List<int>>()) + " }";
+                string AttackWeightEasy = "new float[] { " + string.Join("f,", noiseData.mAttackWeightEasy.ToObject<List<double>>()) + "f }"; ;
+                string AttackWeightNormal = "new float[] { " + string.Join("f,", noiseData.mAttackWeightNormal.ToObject<List<double>>()) + "f }"; ;
+                string AttackWeightHard = "new float[] { " + string.Join("f,", noiseData.mAttackWeightHard.ToObject<List<double>>()) + "f }"; ;
+                string AttackWeightUltimate = "new float[] { " + string.Join("f,", noiseData.mAttackWeightUltimate.ToObject<List<double>>()) + "f }"; ;
+                int ShacHateGaugeMax = (int)noiseData.mShacHateGaugeMax;
+                int ShacTriggerLine = (int)noiseData.mShacTriggerLine;
+                int ShacAttackIndex = (int)noiseData.mShacAttackIndex;
+                string ShacStateName = (string)noiseData.mShacStateName;
+                int SightAngle = (int)noiseData.mSightAngle;
+                string Scale = (double)noiseData.mScale + "f";
+                int Exp = (int)noiseData.mExp;
+                int Bp = (int)noiseData.mBp;
+                string BattleTime = (double)noiseData.mBattleTime + "f";
+                string Param = "new byte[] { " + string.Join(',', noiseData.mParam.ToObject<List<int>>()) + " }";
+                int BlowedColRadius = (int)noiseData.mBlowedColRadius;
+                int DesperateSe = (int)noiseData.mDesperateSe;
+                int EscapeSe = (int)noiseData.mEscapeSe;
+                int DesperateVoice = (int)noiseData.mDesperateVoice;
+                string PinDropId = "new ushort[] { " + string.Join(',', noiseData.mDrop.ToObject<List<int>>()) + " }";
+                string DropRate = "new float[] { " + string.Join("f,", noiseData.mDropRate.ToObject<List<double>>()) + "f }"; ;
+                int DynamicBoneFps = (int)noiseData.mDynamicBoneFps;
+                int DynamicBoneDistance = (int)noiseData.mDynamicBoneDistance;
+                int DiseaseSyncroUpRate = (int)noiseData.mDiseaseSyncroUpRate;
+                int DiseaseDamageCutRate = (int)noiseData.mDiseaseDamageCutRate;
+                int Level = (int)noiseData.mLevel;
+                int ResultCp = (int)noiseData.mResultCp;
+
+                if (SoFileName == "")
+                {
+                    SoFileName = "null";
+                }
+                else
+                {
+                    SoFileName = "\"" + SoFileName + "\"";
+                }
+
+                if (Attack == "new uint[] { }")
+                {
+                    Attack = "null";
+                }
+
+                if (ShacStateName == "")
+                {
+                    ShacStateName = "null";
+                }
+                else
+                {
+                    ShacStateName = "\"" + ShacStateName + "\"";
+                }
+
+                Builder.Append("            { ");
+                Builder.Append(Id);
+                Builder.Append(", ");
+
+                //        public Noise(uint id, byte _class, ushort type, byte typeVersion, string soFileName, ushort resourceData, ushort baseParam, uint[] attack, float[] attackWeightEasy, float[] attackWeightNormal, float[] attackWeightHard, float[] attackWeightUltimate, byte shacHateGaugeMax, byte shacTriggerLine, byte shacAttackIndex, string shacStateName, byte sightAngle, float scale, ushort exp, ushort bp, float battleTime, byte[] param, float blowedColRadius, int desperateSe, int escapeSe, int desperateVoice, ushort[] pinDropId, float[] dropRate, byte dynamicBoneFps, byte dynamicBoneDistance, byte diseaseSyncroUpRate, byte diseaseDamageCutRate, byte level, byte resultCp)
+
+                string Constructor = string.Format("        new Noise({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {21}, {22}, {23}, {24}, {25}, {26}, {27}, {28}, {29}, {30}, {31}, {32}, {33})",
+                    Id,
+                    Class,
+                    Type,
+                    TypeVersion,
+                    SoFileName,
+                    ResourceData,
+                    BaseParam,
+                    Attack,
+                    AttackWeightEasy,
+                    AttackWeightNormal,
+                    AttackWeightHard,
+                    AttackWeightUltimate,
+                    ShacHateGaugeMax,
+                    ShacTriggerLine,
+                    ShacAttackIndex,
+                    ShacStateName,
+                    SightAngle,
+                    Scale,
+                    Exp,
+                    Bp,
+                    BattleTime,
+                    Param,
+                    BlowedColRadius,
+                    DesperateSe,
+                    EscapeSe,
+                    DesperateVoice,
+                    PinDropId,
+                    DropRate,
+                    DynamicBoneFps,
+                    DynamicBoneDistance,
+                    DiseaseSyncroUpRate,
+                    DiseaseDamageCutRate,
+                    Level,
+                    ResultCp);
+
+                Builder.Append(Constructor);
+
+                Builder.AppendLine(" },");
+            }
+
+            Builder.AppendLine("        };");
+            File.WriteAllText("output_dictionary_noisedata.cs", Builder.ToString());
         }
     }
 }

@@ -24172,27 +24172,27 @@ namespace NTwewyDb
                 case 0:
                 default:
                     return ENG.FirstOrDefault(s => s.Value == Value).Key;
-                    
+
 
                 case 1:
                     return JPN.FirstOrDefault(s => s.Value == Value).Key;
-                    
+
 
                 case 2:
                     return SPA.FirstOrDefault(s => s.Value == Value).Key;
-                    
+
 
                 case 3:
                     return FRE.FirstOrDefault(s => s.Value == Value).Key;
-                    
+
 
                 case 4:
                     return ITA.FirstOrDefault(s => s.Value == Value).Key;
-                    
+
 
                 case 5:
                     return GER.FirstOrDefault(s => s.Value == Value).Key;
-                    
+
             }
         }
     }
