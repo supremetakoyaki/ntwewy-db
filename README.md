@@ -7,4 +7,5 @@ NEO: The World Ends with You database made in C#.
 - **ItemManager**
 - **CharacterManager**
 - **GameLocaleManager**
+- **SocialNetworkManager**
 3. expand your world
