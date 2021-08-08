@@ -580,6 +580,9 @@
   <data name="Dive_icon_medal_05" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Dive_icon_medal_05.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GodBadge_star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\GodBadge_star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ID001_NoBrand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\ID001_NoBrand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -3237,6 +3240,42 @@
   </data>
   <data name="Point_noise_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Point_noise_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PsychicButton_L" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PsychicButton_L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PsychicButton_L_God" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PsychicButton_L_God.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PsychicButton_R" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PsychicButton_R.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PsychicButton_R_God" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PsychicButton_R_God.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PsychicButton_X" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PsychicButton_X.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PsychicButton_X_God" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PsychicButton_X_God.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PsychicButton_Y" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PsychicButton_Y.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PsychicButton_Y_God" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PsychicButton_Y_God.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PsychicButton_ZL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PsychicButton_ZL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PsychicButton_ZL_God" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PsychicButton_ZL_God.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PsychicButton_ZR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PsychicButton_ZR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PsychicButton_ZR_God" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PsychicButton_ZR_God.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Shop_base_custom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Shop_base_custom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

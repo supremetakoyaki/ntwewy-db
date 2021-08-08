@@ -13,6 +13,11 @@ namespace NTwewyDb
 
         public static Bitmap DrawImage(string SpriteFileName, int Width, int Height, float Dpi = 96)
         {
+            if (SpriteFileName == null)
+            {
+                return null;
+            }
+
             using (Bitmap Source = Resources.ResourceManager.GetObject(SpriteFileName) as Bitmap)
             {
                 float ScaleFactor = Dpi / 96;

@@ -1603,6 +1603,16 @@ namespace NTwewyDb {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GodBadge_star {
+            get {
+                object obj = ResourceManager.GetObject("GodBadge_star", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ID001_NoBrand {
             get {
                 object obj = ResourceManager.GetObject("ID001_NoBrand", resourceCulture);
@@ -10456,6 +10466,126 @@ namespace NTwewyDb {
         internal static System.Drawing.Bitmap Pointnoise_icon {
             get {
                 object obj = ResourceManager.GetObject("Pointnoise_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PsychicButton_L {
+            get {
+                object obj = ResourceManager.GetObject("PsychicButton_L", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PsychicButton_L_God {
+            get {
+                object obj = ResourceManager.GetObject("PsychicButton_L_God", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PsychicButton_R {
+            get {
+                object obj = ResourceManager.GetObject("PsychicButton_R", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PsychicButton_R_God {
+            get {
+                object obj = ResourceManager.GetObject("PsychicButton_R_God", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PsychicButton_X {
+            get {
+                object obj = ResourceManager.GetObject("PsychicButton_X", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PsychicButton_X_God {
+            get {
+                object obj = ResourceManager.GetObject("PsychicButton_X_God", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PsychicButton_Y {
+            get {
+                object obj = ResourceManager.GetObject("PsychicButton_Y", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PsychicButton_Y_God {
+            get {
+                object obj = ResourceManager.GetObject("PsychicButton_Y_God", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PsychicButton_ZL {
+            get {
+                object obj = ResourceManager.GetObject("PsychicButton_ZL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PsychicButton_ZL_God {
+            get {
+                object obj = ResourceManager.GetObject("PsychicButton_ZL_God", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PsychicButton_ZR {
+            get {
+                object obj = ResourceManager.GetObject("PsychicButton_ZR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PsychicButton_ZR_God {
+            get {
+                object obj = ResourceManager.GetObject("PsychicButton_ZR_God", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
