@@ -8,4 +8,8 @@ NEO: The World Ends with You database made in C#.
 - **CharacterManager**
 - **GameLocaleManager**
 - **SocialNetworkManager**
+- **NoiseManager**
 3. expand your world
+
+# other
+You can access many important game sprites (not story related) using the static ImageMethods class. I will document more in the future.
