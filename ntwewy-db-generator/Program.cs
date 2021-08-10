@@ -952,6 +952,9 @@ namespace NTwewyDbGenerator
             string json_noisedata = File.ReadAllText("EnemyData.txt");
             dynamic array_noise = JsonConvert.DeserializeObject(json_noisedata);
 
+            string json_battlecharacter = File.ReadAllText("BattleCharacter.txt");
+            dynamic array_battlecharacter = JsonConvert.DeserializeObject(json_battlecharacter);
+
             StringBuilder Builder = new StringBuilder();
             Builder.AppendLine("        private readonly Dictionary<uint, Noise> NoiseData = new Dictionary<uint, Noise>()");
             Builder.AppendLine("        {");
@@ -1016,13 +1019,29 @@ namespace NTwewyDbGenerator
                     ShacStateName = "\"" + ShacStateName + "\"";
                 }
 
+                int Hp = 0;
+                int AttackVal = 0;
+                int Damage = 0;
+                int Weight = 0;
+
+                foreach (var battleNoise in array_battlecharacter.mTarget)
+                {
+                    if (BaseParam == (int)battleNoise.mId)
+                    {
+                        Hp = (int)battleNoise.mHp;
+                        AttackVal = (int)battleNoise.mAttack;
+                        Damage = (int)battleNoise.mDamage;
+                        Weight = (int)battleNoise.mWeight;
+                    }
+                }
+
                 Builder.Append("            { ");
                 Builder.Append(Id);
                 Builder.Append(", ");
 
                 //        public Noise(uint id, byte _class, ushort type, byte typeVersion, string soFileName, ushort resourceData, ushort baseParam, uint[] attack, float[] attackWeightEasy, float[] attackWeightNormal, float[] attackWeightHard, float[] attackWeightUltimate, byte shacHateGaugeMax, byte shacTriggerLine, byte shacAttackIndex, string shacStateName, byte sightAngle, float scale, ushort exp, ushort bp, float battleTime, byte[] param, float blowedColRadius, int desperateSe, int escapeSe, int desperateVoice, ushort[] pinDropId, float[] dropRate, byte dynamicBoneFps, byte dynamicBoneDistance, byte diseaseSyncroUpRate, byte diseaseDamageCutRate, byte level, byte resultCp)
 
-                string Constructor = string.Format("        new Noise({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {21}, {22}, {23}, {24}, {25}, {26}, {27}, {28}, {29}, {30}, {31}, {32}, {33})",
+                string Constructor = string.Format("        new Noise({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {21}, {22}, {23}, {24}, {25}, {26}, {27}, {28}, {29}, {30}, {31}, {32}, {33}, {34}, {35}, {36}, {37})",
                     Id,
                     Class,
                     Type,
@@ -1056,7 +1075,11 @@ namespace NTwewyDbGenerator
                     DiseaseSyncroUpRate,
                     DiseaseDamageCutRate,
                     Level,
-                    ResultCp);
+                    ResultCp,
+                    Hp,
+                    AttackVal,
+                    Damage,
+                    Weight);
 
                 Builder.Append(Constructor);
 

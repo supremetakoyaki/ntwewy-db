@@ -36,8 +36,12 @@
         public byte DiseaseDamageCutRate { get; set; }
         public byte Level { get; set; }
         public byte ResultCp { get; set; }
+        public ushort Hp { get; set; }
+        public ushort AttackValue { get; set; }
+        public ushort Damage { get; set; }
+        public byte Weight { get; set; }
 
-        public Noise(uint id, byte _class, ushort type, byte typeVersion, string soFileName, ushort resourceData, ushort baseParam, uint[] attack, float[] attackWeightEasy, float[] attackWeightNormal, float[] attackWeightHard, float[] attackWeightUltimate, byte shacHateGaugeMax, byte shacTriggerLine, byte shacAttackIndex, string shacStateName, byte sightAngle, float scale, ushort exp, ushort bp, float battleTime, byte[] param, float blowedColRadius, int desperateSe, int escapeSe, int desperateVoice, ushort[] pinDropId, float[] dropRate, byte dynamicBoneFps, byte dynamicBoneDistance, byte diseaseSyncroUpRate, byte diseaseDamageCutRate, byte level, byte resultCp)
+        public Noise(uint id, byte _class, ushort type, byte typeVersion, string soFileName, ushort resourceData, ushort baseParam, uint[] attack, float[] attackWeightEasy, float[] attackWeightNormal, float[] attackWeightHard, float[] attackWeightUltimate, byte shacHateGaugeMax, byte shacTriggerLine, byte shacAttackIndex, string shacStateName, byte sightAngle, float scale, ushort exp, ushort bp, float battleTime, byte[] param, float blowedColRadius, int desperateSe, int escapeSe, int desperateVoice, ushort[] pinDropId, float[] dropRate, byte dynamicBoneFps, byte dynamicBoneDistance, byte diseaseSyncroUpRate, byte diseaseDamageCutRate, byte level, byte resultCp, ushort hp, ushort attackValue, ushort damage, byte weight)
         {
             Id = id;
             Class = _class;
@@ -73,6 +77,10 @@
             DiseaseDamageCutRate = diseaseDamageCutRate;
             Level = level;
             ResultCp = resultCp;
+            Hp = hp;
+            AttackValue = attackValue;
+            Damage = damage;
+            Weight = weight;
         }
     }
 }
