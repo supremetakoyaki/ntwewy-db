@@ -393,6 +393,16 @@ namespace NTwewyDb {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Boss_icon {
+            get {
+                object obj = ResourceManager.GetObject("Boss_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap brand_01 {
             get {
                 object obj = ResourceManager.GetObject("brand_01", resourceCulture);
@@ -10676,6 +10686,316 @@ namespace NTwewyDb {
         internal static System.Drawing.Bitmap Shop_img_chara_status_07 {
             get {
                 object obj = ResourceManager.GetObject("Shop_img_chara_status_07", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_00 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_00", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_01 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_02 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_03 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_03", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_04 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_04", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_05 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_05", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_06 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_06", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_07 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_07", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_08 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_08", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_09 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_09", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_10 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_11 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_12 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_15 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_15", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_17 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_17", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_18 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_18", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_19 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_19", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_20 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_21 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_22 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_23 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_23", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_24 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_25 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_26 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_27 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_27", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_28 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_28", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_29 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_29", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_30 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_31 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_31", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_32 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UI_NoiseSymbol_33 {
+            get {
+                object obj = ResourceManager.GetObject("UI_NoiseSymbol_33", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

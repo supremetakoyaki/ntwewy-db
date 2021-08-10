@@ -362,12 +362,14 @@ namespace NTwewyDb
 
         public Noise GetNoiseWithNoisepediaEntry(NoisepediaEntry Entry)
         {
-            foreach (uint Id in NoiseData.Keys)
+            if (Entry == null)
             {
-                if (Id == Entry.NoiseId)
-                {
-                    return NoiseData[Id];
-                }
+                return null;
+            }
+
+            if (NoiseData.ContainsKey(Entry.NoiseId))
+            {
+                return NoiseData[Entry.NoiseId];
             }
 
             return null;
