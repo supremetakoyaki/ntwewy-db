@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>NTwewyDb</RootNamespace>
-    <AssemblyVersion>1.2</AssemblyVersion>
-    <FileVersion>1.2</FileVersion>
+    <AssemblyVersion>1.2.1</AssemblyVersion>
+    <FileVersion>1.2.1</FileVersion>
     <NeutralLanguage>en</NeutralLanguage>
   </PropertyGroup>
 
