@@ -1231,20 +1231,110 @@ namespace NTwewyDb
             { 25,         new PinAttackElement(25, "PSY_Element_Name_000", "", "", 0) }
         };
 
-        /// <summary>
-        /// byte: pin level up type
-        /// short[]: experience required for up to level 15.
-        /// </summary>
-        private readonly Dictionary<byte, ushort[]> PinExperienceForLevelUpType = new Dictionary<byte, ushort[]>()
+        private readonly Dictionary<byte, PinLevelUpTable> LevelUpTables = new Dictionary<byte, PinLevelUpTable>()
         {
-            { 0, new ushort[15] { 0, 16, 35, 58, 86, 116, 149, 186, 227, 270, 315, 362, 411, 463, 518} },
-            { 1, new ushort[15] { 0, 22, 49, 81, 120, 163, 210, 262, 319, 379, 442, 508, 577, 650, 727} },
-            { 2, new ushort[15] { 0, 32, 71, 117, 173, 234, 301, 375, 457, 543, 633, 728, 827, 931, 1041} },
-            { 3, new ushort[15] { 0, 35, 77, 128, 189, 256, 330, 412, 502, 596, 695, 799, 908, 1023, 1144} },
-            { 4, new ushort[15] { 0, 39, 85, 141, 208, 282, 363, 452, 550, 653, 761, 875, 994, 1119, 1251} },
-            { 5, new ushort[15] { 0, 42, 92, 152, 225, 305, 393, 490, 596, 708, 825, 948, 1077, 1213, 1356} },
-            { 6, new ushort[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} }
+            { 1, new PinLevelUpTable(1, 1, new uint[] { 0,0,0,0,0,0,0 }) },
+            { 2, new PinLevelUpTable(2, 2, new uint[] { 16,22,32,35,39,42,0 }) },
+            { 3, new PinLevelUpTable(3, 3, new uint[] { 35,49,71,77,85,92,0 }) },
+            { 4, new PinLevelUpTable(4, 4, new uint[] { 58,81,117,128,141,152,0 }) },
+            { 5, new PinLevelUpTable(5, 5, new uint[] { 86,120,173,189,208,225,0 }) },
+            { 6, new PinLevelUpTable(6, 6, new uint[] { 116,163,234,256,282,305,0 }) },
+            { 7, new PinLevelUpTable(7, 7, new uint[] { 149,210,301,330,363,393,0 }) },
+            { 8, new PinLevelUpTable(8, 8, new uint[] { 186,262,375,412,452,490,0 }) },
+            { 9, new PinLevelUpTable(9, 9, new uint[] { 227,319,457,502,550,596,0 }) },
+            { 10, new PinLevelUpTable(10, 10, new uint[] { 270,379,543,596,653,708,0 }) },
+            { 11, new PinLevelUpTable(11, 11, new uint[] { 315,442,633,695,761,825,0 }) },
+            { 12, new PinLevelUpTable(12, 12, new uint[] { 362,508,728,799,875,948,0 }) },
+            { 13, new PinLevelUpTable(13, 13, new uint[] { 411,577,827,908,994,1077,0 }) },
+            { 14, new PinLevelUpTable(14, 14, new uint[] { 463,650,931,1023,1119,1213,0 }) },
+            { 15, new PinLevelUpTable(15, 15, new uint[] { 518,727,1041,1144,1251,1356,0 }) },
+            { 16, new PinLevelUpTable(16, 16, new uint[] { 575,807,1156,1271,1389,1506,0 }) },
+            { 17, new PinLevelUpTable(17, 17, new uint[] { 635,892,1277,1404,1534,1663,0 }) },
+            { 18, new PinLevelUpTable(18, 18, new uint[] { 698,981,1404,1544,1687,1828,0 }) },
+            { 19, new PinLevelUpTable(19, 19, new uint[] { 764,1074,1537,1691,1847,2002,0 }) },
+            { 20, new PinLevelUpTable(20, 20, new uint[] { 834,1172,1677,1845,2015,2184,0 }) },
+            { 21, new PinLevelUpTable(21, 21, new uint[] { 907,1275,1824,2007,2192,2375,0 }) },
+            { 22, new PinLevelUpTable(22, 22, new uint[] { 984,1383,1979,2177,2378,2576,0 }) },
+            { 23, new PinLevelUpTable(23, 23, new uint[] { 1065,1496,2141,2356,2573,2787,0 }) },
+            { 24, new PinLevelUpTable(24, 24, new uint[] { 1150,1615,2311,2544,2778,3009,0 }) },
+            { 25, new PinLevelUpTable(25, 25, new uint[] { 1239,1740,2490,2741,2993,3242,0 }) },
+            { 26, new PinLevelUpTable(26, 26, new uint[] { 1333,1871,2678,2948,3219,3486,0 }) },
+            { 27, new PinLevelUpTable(27, 27, new uint[] { 1431,2009,2875,3165,3456,3743,0 }) },
+            { 28, new PinLevelUpTable(28, 28, new uint[] { 1534,2154,3082,3393,3705,4013,0 }) },
+            { 29, new PinLevelUpTable(29, 29, new uint[] { 1643,2306,3300,3632,3966,4296,0 }) },
+            { 30, new PinLevelUpTable(30, 30, new uint[] { 1757,2466,3529,3883,4240,4593,0 }) },
+            { 31, new PinLevelUpTable(31, 31, new uint[] { 1877,2634,3769,4147,4528,4905,0 }) },
+            { 32, new PinLevelUpTable(32, 32, new uint[] { 2003,2810,4021,4424,4831,5233,0 }) },
+            { 33, new PinLevelUpTable(33, 33, new uint[] { 2135,2995,4286,4715,5149,5577,0 }) },
+            { 34, new PinLevelUpTable(34, 34, new uint[] { 2274,3189,4564,5021,5483,5938,0 }) },
+            { 35, new PinLevelUpTable(35, 35, new uint[] { 2420,3393,4856,5342,5833,6318,0 }) },
+            { 36, new PinLevelUpTable(36, 36, new uint[] { 2573,3607,5162,5679,6201,6717,0 }) },
+            { 37, new PinLevelUpTable(37, 37, new uint[] { 2734,3832,5484,6033,6587,7136,0 }) },
+            { 38, new PinLevelUpTable(38, 38, new uint[] { 2903,4068,5822,6405,6993,7575,0 }) },
+            { 39, new PinLevelUpTable(39, 39, new uint[] { 3080,4316,6177,6795,7419,8036,0 }) },
+            { 40, new PinLevelUpTable(40, 40, new uint[] { 3266,4577,6550,7205,7866,8521,0 }) },
+            { 41, new PinLevelUpTable(41, 41, new uint[] { 3461,4851,6941,7635,8336,9030,0 }) },
+            { 42, new PinLevelUpTable(42, 42, new uint[] { 3666,5138,7352,8087,8829,9564,0 }) },
+            { 43, new PinLevelUpTable(43, 43, new uint[] { 3881,5440,7783,8562,9347,10125,0 }) },
+            { 44, new PinLevelUpTable(44, 44, new uint[] { 4107,5757,8236,9060,9891,10714,0 }) },
+            { 45, new PinLevelUpTable(45, 45, new uint[] { 4345,6090,8712,9583,10462,11333,0 }) },
+            { 46, new PinLevelUpTable(46, 46, new uint[] { 4595,6440,9212,10133,11062,11983,0 }) },
+            { 47, new PinLevelUpTable(47, 47, new uint[] { 4857,6807,9737,10710,11692,12665,0 }) },
+            { 48, new PinLevelUpTable(48, 48, new uint[] { 5132,7192,10288,11316,12353,13381,0 }) },
+            { 49, new PinLevelUpTable(49, 49, new uint[] { 5421,7597,10866,11952,13047,14133,0 }) },
+            { 50, new PinLevelUpTable(50, 50, new uint[] { 5724,8022,11473,12620,13776,14923,0 }) },
+            { 51, new PinLevelUpTable(51, 51, new uint[] { 6043,8468,12111,13322,14541,15752,0 }) },
+            { 52, new PinLevelUpTable(52, 52, new uint[] { 6378,8937,12781,14059,15345,16623,0 }) },
+            { 53, new PinLevelUpTable(53, 53, new uint[] { 6729,9429,13484,14832,16189,17537,0 }) },
+            { 54, new PinLevelUpTable(54, 54, new uint[] { 7098,9946,14222,15644,17075,18497,0 }) },
+            { 55, new PinLevelUpTable(55, 55, new uint[] { 7485,10489,14997,16497,18005,19505,0 }) },
+            { 56, new PinLevelUpTable(56, 56, new uint[] { 7892,11059,15811,17392,18982,20563,0 }) },
+            { 57, new PinLevelUpTable(57, 57, new uint[] { 8319,11657,16666,18332,20008,21674,0 }) },
+            { 58, new PinLevelUpTable(58, 58, new uint[] { 8767,12285,17563,19319,21085,22841,0 }) },
+            { 59, new PinLevelUpTable(59, 59, new uint[] { 9238,12945,18505,20356,22216,24066,0 }) },
+            { 60, new PinLevelUpTable(60, 60, new uint[] { 9733,13638,19495,21445,23404,25353,0 }) },
+            { 61, new PinLevelUpTable(61, 61, new uint[] { 10252,14365,20534,22588,24651,26704,0 }) },
+            { 62, new PinLevelUpTable(62, 62, new uint[] { 10797,15129,21625,23788,25960,28122,0 }) },
+            { 63, new PinLevelUpTable(63, 63, new uint[] { 11370,15931,22771,25048,27335,29611,0 }) },
+            { 64, new PinLevelUpTable(64, 64, new uint[] { 11971,16773,23974,26371,28779,31175,0 }) },
+            { 65, new PinLevelUpTable(65, 65, new uint[] { 12602,17657,25237,27760,30295,32817,0 }) },
+            { 66, new PinLevelUpTable(66, 66, new uint[] { 13265,18585,26563,29219,31887,34541,0 }) },
+            { 67, new PinLevelUpTable(67, 67, new uint[] { 13961,19560,27956,30751,33558,36352,0 }) },
+            { 68, new PinLevelUpTable(68, 68, new uint[] { 14692,20583,29418,32360,35313,38253,0 }) },
+            { 69, new PinLevelUpTable(69, 69, new uint[] { 15459,21658,30953,34049,37156,40249,0 }) },
+            { 70, new PinLevelUpTable(70, 70, new uint[] { 16265,22786,32565,35822,39091,42345,0 }) },
+            { 71, new PinLevelUpTable(71, 71, new uint[] { 17111,23971,34258,37684,41122,44546,0 }) },
+            { 72, new PinLevelUpTable(72, 72, new uint[] { 17999,25215,36035,39639,43255,46857,0 }) },
+            { 73, new PinLevelUpTable(73, 73, new uint[] { 18932,26521,37901,41692,45495,49283,0 }) },
+            { 74, new PinLevelUpTable(74, 74, new uint[] { 19912,27893,39861,43848,47847,51831,0 }) },
+            { 75, new PinLevelUpTable(75, 75, new uint[] { 20941,29333,41919,46112,50316,54506,0 }) },
+            { 76, new PinLevelUpTable(76, 76, new uint[] { 22021,30845,44080,48489,52909,57315,0 }) },
+            { 77, new PinLevelUpTable(77, 77, new uint[] { 23155,32433,46349,50985,55632,60264,0 }) },
+            { 78, new PinLevelUpTable(78, 78, new uint[] { 24346,34100,48731,53605,58491,63361,0 }) },
+            { 79, new PinLevelUpTable(79, 79, new uint[] { 25596,35851,51232,56356,61493,66613,0 }) },
+            { 80, new PinLevelUpTable(80, 80, new uint[] { 26909,37689,53858,59245,64645,70027,0 }) },
+            { 81, new PinLevelUpTable(81, 81, new uint[] { 28288,39619,56616,62279,67954,73612,0 }) },
+            { 82, new PinLevelUpTable(82, 82, new uint[] { 29736,41646,59512,65464,71429,77376,0 }) },
+            { 83, new PinLevelUpTable(83, 83, new uint[] { 31256,43774,62552,68809,75078,81329,0 }) },
+            { 84, new PinLevelUpTable(84, 84, new uint[] { 32852,46009,65744,72321,78909,85479,0 }) },
+            { 85, new PinLevelUpTable(85, 85, new uint[] { 34528,48355,69096,76008,82932,89837,0 }) },
+            { 86, new PinLevelUpTable(86, 86, new uint[] { 36288,50819,72616,79880,87156,94413,0 }) },
+            { 87, new PinLevelUpTable(87, 87, new uint[] { 38136,53406,76312,83945,91591,99218,0 }) },
+            { 88, new PinLevelUpTable(88, 88, new uint[] { 40076,56122,80193,88214,96248,104263,0 }) },
+            { 89, new PinLevelUpTable(89, 89, new uint[] { 42113,58974,84268,92696,101138,109560,0 }) },
+            { 90, new PinLevelUpTable(90, 90, new uint[] { 44252,61969,88546,97402,106272,115122,0 }) },
+            { 91, new PinLevelUpTable(91, 91, new uint[] { 46498,65113,93038,102344,111663,120962,0 }) },
+            { 92, new PinLevelUpTable(92, 92, new uint[] { 48856,68415,97755,107533,117323,127094,0 }) },
+            { 93, new PinLevelUpTable(93, 93, new uint[] { 51332,71882,102708,112981,123267,133533,0 }) },
+            { 94, new PinLevelUpTable(94, 94, new uint[] { 53932,75522,107909,118702,129508,140294,0 }) },
+            { 95, new PinLevelUpTable(95, 95, new uint[] { 56662,79344,113370,124709,136061,147393,0 }) },
+            { 96, new PinLevelUpTable(96, 96, new uint[] { 59529,83357,119104,131016,142941,154847,0 }) },
+            { 97, new PinLevelUpTable(97, 97, new uint[] { 62539,87571,125124,137638,150165,162674,0 }) },
+            { 98, new PinLevelUpTable(98, 98, new uint[] { 65699,91996,131445,144592,157751,170892,0 }) },
+            { 99, new PinLevelUpTable(99, 99, new uint[] { 69017,96642,138082,151893,165716,179521,0 }) },
+            { 100, new PinLevelUpTable(100, 100, new uint[] { 72501,101520,145051,159559,174079,188581,0 }) },
         };
+
         #endregion
 
         #region QoL dictionaries
@@ -1458,10 +1548,19 @@ namespace NTwewyDb
             }
             return null;
         }
+
+        public PinLevelUpTable GetPinLevelUpTable(byte Level)
+        {
+            if (LevelUpTables.ContainsKey(Level))
+            {
+                return LevelUpTables[Level];
+            }
+            return null;
+        }
         #endregion
 
         #region Pin methods
-        public ushort GetPinExperienceWithPinIdAndLevel(ushort ParticularId, byte Level)
+        public uint GetPinExperienceWithPinIdAndLevel(ushort ParticularId, byte Level)
         {
             if (Level < 1)
             {
@@ -1479,10 +1578,16 @@ namespace NTwewyDb
                 Level = Pin.MaxLevel;
             }
 
-            return (PinExperienceForLevelUpType[Pin.LevelUpType])[Level - 1];
+            PinLevelUpTable LvUpTable = GetPinLevelUpTable(Level);
+            if (LvUpTable == null)
+            {
+                return 0;
+            }
+
+            return LvUpTable.Exp[Pin.LevelUpType];
         }
 
-        public byte GetPinLevelWithPinIdAndExperience(ushort ParticularId, ushort Experience)
+        public byte GetPinLevelWithPinIdAndExperience(ushort ParticularId, uint Experience)
         {
             PinItem Pin = GetPinItem(ParticularId);
             if (Pin == null)
@@ -1490,22 +1595,15 @@ namespace NTwewyDb
                 return 1; //or throw an error?
             }
 
-            ushort MaxExperience = (PinExperienceForLevelUpType[Pin.LevelUpType])[Pin.MaxLevel - 1];
-
-            if (Experience > MaxExperience)
-            {
-                return Pin.MaxLevel;
-            }
-
             byte Level = 1;
-
-            for (byte i = 0; i < Pin.MaxLevel; i++)
+            foreach (PinLevelUpTable LvUpTable in LevelUpTables.Values)
             {
-                ushort ExpNeeded = (PinExperienceForLevelUpType[Pin.LevelUpType])[i]; // Experience needed for level i+1
-
-                if (ExpNeeded <= Experience)
+                if (LvUpTable.Level <= Pin.MaxLevel)
                 {
-                    Level = (byte)(i + 1);
+                    if (LvUpTable.Exp[Pin.LevelUpType] <= Experience)
+                    {
+                        Level = LvUpTable.Level;
+                    }
                 }
             }
 

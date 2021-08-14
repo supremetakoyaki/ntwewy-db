@@ -27,6 +27,7 @@ namespace NTwewyDbGenerator
             Console.WriteLine("8. Attack Element");
             Console.WriteLine("9. Noisepedia");
             Console.WriteLine("10. Noise (EnemyData)");
+            Console.WriteLine("11. Pin Level Up Table");
 
             Console.WriteLine();
             Console.Write("Select a dictionary: ");
@@ -75,6 +76,10 @@ namespace NTwewyDbGenerator
 
                 case "10":
                     GenerateNoiseData();
+                    break;
+
+                case "11":
+                    GeneratePinLevelUpTable();
                     break;
 
                 default:
@@ -1088,6 +1093,40 @@ namespace NTwewyDbGenerator
 
             Builder.AppendLine("        };");
             File.WriteAllText("output_dictionary_noisedata.cs", Builder.ToString());
+        }
+
+        public static void GeneratePinLevelUpTable()
+        {
+            string json_pinlevelup = File.ReadAllText("BadgeLvUpTable.txt");
+            dynamic array_pinlevel = JsonConvert.DeserializeObject(json_pinlevelup);
+
+            StringBuilder Builder = new StringBuilder();
+            Builder.AppendLine("        private readonly Dictionary<byte, PinLevelUpTable> LevelUpTables = new Dictionary<byte, PinLevelUpTable>()");
+            Builder.AppendLine("        {");
+
+            foreach (var lvlUpData in array_pinlevel.mTarget)
+            {
+                int Id = (int)lvlUpData.mId;
+                int Level = (int)lvlUpData.mLevel;
+                string Exp = "new uint[] { " + string.Join(',', lvlUpData.mExp.ToObject<List<uint>>()) + " }";
+
+
+                Builder.Append("            { ");
+                Builder.Append(Id);
+                Builder.Append(", ");
+
+                string Constructor = string.Format("new PinLevelUpTable({0}, {1}, {2})",
+                    Id,
+                    Level,
+                    Exp);
+
+                Builder.Append(Constructor);
+
+                Builder.AppendLine(" },");
+            }
+
+            Builder.AppendLine("        };");
+            File.WriteAllText("output_dictionary_pinleveluptable.cs", Builder.ToString());
         }
     }
 }
