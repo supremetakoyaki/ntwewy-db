@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace NTwewyDb
 {
@@ -1584,7 +1585,7 @@ namespace NTwewyDb
                 return 0;
             }
 
-            return LvUpTable.Exp[Pin.LevelUpType];
+            return (uint)Math.Floor((float)LvUpTable.Exp[Pin.LevelUpType] * Pin.LevelUpRate);
         }
 
         public byte GetPinLevelWithPinIdAndExperience(ushort ParticularId, uint Experience)
@@ -1594,6 +1595,8 @@ namespace NTwewyDb
             {
                 return 1; //or throw an error?
             }
+
+            Experience = (uint)Math.Floor((float)Experience / Pin.LevelUpRate);
 
             byte Level = 1;
             foreach (PinLevelUpTable LvUpTable in LevelUpTables.Values)

@@ -151,7 +151,7 @@ namespace NTwewyDbGenerator
                     pinData.mBadgeSpriteName,
                     (int)pinData.mBrand,
                     saveIndex,
-                    System.Convert.ToInt32(((string)pinData.mNameChance).Replace("Chance_Name_", "")),
+                    Convert.ToInt32(((string)pinData.mNameChance).Replace("Chance_Name_", "")),
                     pinData.mPsychic,
                     pinData.mPsychicKey,
                     pinData.mAttack,
