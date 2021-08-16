@@ -320,9 +320,24 @@ namespace NTwewyDb
             { 200013,         new Noise(200013, 9, 1200, 9, "PigParamSO", 12, 40014, new uint[] {  }, new float[] { 0f,0f,0f,0f,0f,0f,0f,0f,0f,0f }, new float[] { 0f,0f,0f,0f,0f,0f,0f,0f,0f,0f }, new float[] { 0f,0f,0f,0f,0f,0f,0f,0f,0f,0f }, new float[] { 0f,0f,0f,0f,0f,0f,0f,0f,0f,0f }, 0, 0, 0, null, 45, 3f, 777, 14, 8.4f, new byte[] { 0,0,0 }, 1, 5908, 5912, -1, new ushort[] { 5008,5008,5008,5008 }, new float[] { 1f,1f,1f,1f }, 30, 7, 2, 0, 1, 0, 1500, 10, 100, 2) }
         };
 
+        private readonly Dictionary<ushort, TurfWar> TurfWars = new Dictionary<ushort, TurfWar>()
+        {
+            { 0, new TurfWar(0, "Struggle_Title_w1d6", "Struggle_Rule_title01", new string[] { "Struggle_Rule_01","Struggle_Rule_02" }, "Struggle_Sub_title01", 0, 0, 1600600, "Struggle_w1d6_StartDataSO", 16, "ACDEFGH", 0) },
+            { 230, new TurfWar(230, "Struggle_Title_w2d3", "Struggle_Rule_title01", new string[] { "Struggle_Rule_01","Struggle_Rule_02" }, "Struggle_Sub_title01", 1, 230, 2300500, "Struggle_w2d3_StartDataSO", 17, "ABCDEFGKLN", 1) },
+            { 260, new TurfWar(260, "Struggle_Title_w2d6", "Struggle_Rule_title01", new string[] { "Struggle_Rule_01","Struggle_Rule_02" }, "Struggle_Sub_title01", 2, 260, 2601400, "Struggle_w2d6_StartDataSO", 16, "CDH", 2) },
+            { 9000, new TurfWar(9000, "Struggle_Title_w3d5", "Struggle_Rule_title01", new string[] { "Struggle_Rule_01","Struggle_Rule_02" }, "Struggle_Sub_title01", 3, 350, 3500100, "Struggle_w3d5_StartDataSO", 16, "ABCDEFGHKLMNPQ", 3) },
+            { 10000, new TurfWar(10000, "Struggle_Title_w1d6", "Struggle_Rule_title01", new string[] { "Struggle_Rule_01" }, "Struggle_Sub_title01", 0, 1000, 1100000, "Struggle_102_StartDataSO", 16, "ACDEFGH", 7) },
+        };
+
+
         public Dictionary<byte, NoisepediaEntry> GetNoisepediaDictionary()
         {
             return Noisepedia;
+        }
+
+        public Dictionary<ushort, TurfWar> GetTurfWars()
+        {
+            return TurfWars;
         }
 
         public NoisepediaEntry GetNoisepediaEntry(byte NoiseId)
@@ -370,6 +385,16 @@ namespace NTwewyDb
             if (NoiseData.ContainsKey(Entry.NoiseId))
             {
                 return NoiseData[Entry.NoiseId];
+            }
+
+            return null;
+        }
+
+        public TurfWar GetTurfWar(ushort Id)
+        {
+            if (TurfWars.ContainsKey(Id))
+            {
+                return TurfWars[Id];
             }
 
             return null;

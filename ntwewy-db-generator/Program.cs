@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Xml.Linq;
 
 namespace NTwewyDbGenerator
 {
@@ -28,6 +27,7 @@ namespace NTwewyDbGenerator
             Console.WriteLine("9. Noisepedia");
             Console.WriteLine("10. Noise (EnemyData)");
             Console.WriteLine("11. Pin Level Up Table");
+            Console.WriteLine("12. Turf War");
 
             Console.WriteLine();
             Console.Write("Select a dictionary: ");
@@ -80,6 +80,10 @@ namespace NTwewyDbGenerator
 
                 case "11":
                     GeneratePinLevelUpTable();
+                    break;
+
+                case "12":
+                    GenerateTurfWarData();
                     break;
 
                 default:
@@ -1127,6 +1131,59 @@ namespace NTwewyDbGenerator
 
             Builder.AppendLine("        };");
             File.WriteAllText("output_dictionary_pinleveluptable.cs", Builder.ToString());
+        }
+
+        public static void GenerateTurfWarData()
+        {
+            string json_turfwar = File.ReadAllText("Struggle.txt");
+            dynamic array_turfwar = JsonConvert.DeserializeObject(json_turfwar);
+
+            StringBuilder Builder = new StringBuilder();
+            Builder.AppendLine("        private readonly Dictionary<ushort, TurfWar> TurfWars = new Dictionary<ushort, TurfWar>()");
+            Builder.AppendLine("        {");
+
+            foreach (var turfWar in array_turfwar.mTarget)
+            {
+                int Id = (int)turfWar.mId;
+                string Title = (string)turfWar.mTitle;
+                string RuleTitle = (string)turfWar.mRuleTitle;
+                string Rule = "new string[] { \"" + string.Join("\",\"", turfWar.mRule.ToObject<List<string>>()) + "\" }";
+                string Sub = (string)turfWar.mSub;
+                int Rewards = (int)turfWar.mRewards;
+                int Noise = (int)turfWar.mNoise;
+                int Scenario = (int)turfWar.mScenario;
+                string StartDataSo = (string)turfWar.mStartDataSo;
+                int HideTeam = (int)turfWar.mHideTeam;
+                string MapOpenArea = (string)turfWar.mMapOpenArea;
+                int SaveIndex = (int)turfWar.mSaveIndex;
+
+                Builder.Append("            { ");
+                Builder.Append(Id);
+                Builder.Append(", ");
+
+                //        public TurfWar(ushort id, string title, string ruleTitle, string[] rule, string sub, byte rewards, ushort noise, int scenario, string startDataSo, byte hideTeam, string mapOpenArea, int saveIndex)
+
+                string Constructor = string.Format("new TurfWar({0}, \"{1}\", \"{2}\", {3}, \"{4}\", {5}, {6}, {7}, \"{8}\", {9}, \"{10}\", {11})",
+                    Id,
+                    Title,
+                    RuleTitle,
+                    Rule,
+                    Sub,
+                    Rewards,
+                    Noise,
+                    Scenario,
+                    StartDataSo,
+                    HideTeam,
+                    MapOpenArea,
+                    SaveIndex);
+
+                Builder.Append(Constructor);
+
+                Builder.AppendLine(" },");
+            }
+
+            Builder.AppendLine("        };");
+            File.WriteAllText("output_dictionary_turfwars.cs", Builder.ToString());
         }
     }
 }
