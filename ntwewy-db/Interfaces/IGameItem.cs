@@ -2,13 +2,13 @@
 {
     public interface IGameItem
     {
-        public ushort GlobalId { get; set; }
-        public ushort ParticularId { get; set; }
-        public ItemType Type { get; set; }
-        public string Name { get; set; }
-        public string Info { get; set; }
-        public string Sprite { get; set; }
-        public byte Brand { get; set; }
-        public int CollectionSaveIndex { get; set; }
+        ushort GlobalId { get; set; }
+        ushort ParticularId { get; set; }
+        ItemType Type { get; set; }
+        string Name { get; set; }
+        string Info { get; set; }
+        string Sprite { get; set; }
+        byte Brand { get; set; }
+        int CollectionSaveIndex { get; set; }
     }
 }

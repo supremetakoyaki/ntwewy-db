@@ -11,7 +11,7 @@ namespace NTwewyDbGenerator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("ntwewy-db-generator v0.1 ~ made by T");
+            Console.WriteLine("ntwewy-db-generator ~ made by T");
             Console.WriteLine("place the necessary .txt files in the application's folder.");
             Console.WriteLine();
             Console.WriteLine("Menu:");
@@ -28,6 +28,7 @@ namespace NTwewyDbGenerator
             Console.WriteLine("10. Noise (EnemyData)");
             Console.WriteLine("11. Pin Level Up Table");
             Console.WriteLine("12. Turf War");
+            Console.WriteLine("13. Trophy");
 
             Console.WriteLine();
             Console.Write("Select a dictionary: ");
@@ -84,6 +85,10 @@ namespace NTwewyDbGenerator
 
                 case "12":
                     GenerateTurfWarData();
+                    break;
+
+                case "13":
+                    GenerateTrophyData();
                     break;
 
                 default:
@@ -1184,6 +1189,86 @@ namespace NTwewyDbGenerator
 
             Builder.AppendLine("        };");
             File.WriteAllText("output_dictionary_turfwars.cs", Builder.ToString());
+        }
+
+        public static void GenerateTrophyData()
+        {
+            string json_trophy = File.ReadAllText("Trophy.txt");
+            dynamic array_trophy = JsonConvert.DeserializeObject(json_trophy);
+
+            string json_trophyrank = File.ReadAllText("TrophyRank.txt");
+            dynamic array_trophyrank = JsonConvert.DeserializeObject(json_trophyrank);
+
+            StringBuilder Builder = new StringBuilder();
+            Builder.AppendLine("        private readonly Dictionary<byte, Trophy> Trophies = new Dictionary<byte, Trophy>()");
+            Builder.AppendLine("        {");
+
+            foreach (var trophyData in array_trophy.mTarget)
+            {
+                int Id = (int)trophyData.mId;
+                int SortIndex = (int)trophyData.mSortIndex;
+                int Param = (int)trophyData.mParam;
+                string TrophyTitle = (string)trophyData.mTrophyTitle;
+                string TrophySummary = (string)trophyData.mTrophySummary;
+                string TrophyHint = (string)trophyData.mTrophyHint;
+                string TrophyIcon = (string)trophyData.mTrophyIcon;
+                int TrophyGrade = (int)trophyData.mTrophyGrade;
+
+                Builder.Append("            { ");
+                Builder.Append(Id);
+                Builder.Append(", ");
+
+                //                public Trophy(byte id, byte sortIndex, int param, string trophyTitle, string trophySummary, string trophyHint, string trophyIcon, byte trophyGrade)
+
+
+                string Constructor = string.Format("new Trophy({0}, {1}, {2}, \"{3}\", \"{4}\", \"{5}\", \"{6}\", {7})",
+                    Id,
+                    SortIndex,
+                    Param,
+                    TrophyTitle,
+                    TrophySummary,
+                    TrophyHint,
+                    TrophyIcon,
+                    TrophyGrade
+                    );
+
+                Builder.Append(Constructor);
+
+                Builder.AppendLine(" },");
+            }
+
+            Builder.AppendLine("        };");
+            Builder.AppendLine();
+
+            Builder.AppendLine("        private readonly Dictionary<byte, TrophyRank> TrophyRanks = new Dictionary<byte, TrophyRank>()");
+            Builder.AppendLine("        {");
+
+            foreach (var rankData in array_trophyrank.mTarget)
+            {
+                int Id = (int)rankData.mId;
+                string RankTitleIcon = (string)rankData.mRankTitleIcon;
+                int Rate = (int)rankData.mRate;
+
+                Builder.Append("            { ");
+                Builder.Append(Id);
+                Builder.Append(", ");
+
+                //                public Trophy(byte id, byte sortIndex, int param, string trophyTitle, string trophySummary, string trophyHint, string trophyIcon, byte trophyGrade)
+
+
+                string Constructor = string.Format("new TrophyRank({0}, \"{1}\", {2})",
+                    Id,
+                    RankTitleIcon,
+                    Rate
+                    );
+
+                Builder.Append(Constructor);
+
+                Builder.AppendLine(" },");
+            }
+            Builder.AppendLine("        };");
+
+            File.WriteAllText("output_dictionary_trophy.cs", Builder.ToString());
         }
     }
 }

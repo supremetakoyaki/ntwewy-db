@@ -3280,6 +3280,162 @@
   <data name="PsychicButton_ZR_God" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\PsychicButton_ZR_God.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Record_bg_list" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_bg_list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_01_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_01_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_02_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_02_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_03_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_03_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_04_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_04_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_05_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_05_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_06_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_06_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_07_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_07_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_08_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_08_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_09_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_09_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_10_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_10_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_11_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_11_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_12_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_12_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_13_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_13_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_14_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_14_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_15_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_15_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_16_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_16_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_17_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_17_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_18_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_18_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_19_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_19_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_20_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_20_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_21_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_21_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_22_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_22_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_23_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_23_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_24_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_24_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_25_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_25_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_26_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_26_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_27_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_27_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_28_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_28_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_29_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_29_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_30_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_30_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_31_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_31_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_32_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_32_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_33_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_33_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_34_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_34_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_35_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_35_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_36_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_36_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_37_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_37_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_38_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_38_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_39_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_39_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_40_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_40_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_41_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_41_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_42_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_42_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_43_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_43_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_44_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_44_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_45_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_45_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_46_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_46_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_47_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_47_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_48_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_48_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_49_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_49_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_50_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_50_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Record_trophy_51_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Record_trophy_51_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Shop_base_custom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Shop_base_custom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

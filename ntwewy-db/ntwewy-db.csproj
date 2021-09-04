@@ -1,17 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <RootNamespace>NTwewyDb</RootNamespace>
-    <AssemblyVersion>1.3</AssemblyVersion>
-    <FileVersion>1.3</FileVersion>
+    <AssemblyVersion>1.5</AssemblyVersion>
+    <FileVersion>1.5</FileVersion>
     <NeutralLanguage>en</NeutralLanguage>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="System.Drawing.Common" Version="5.0.0" />
-    <PackageReference Include="System.Resources.Extensions" Version="5.0.0" />
-  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Resources.Designer.cs">

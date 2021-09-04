@@ -1336,6 +1336,76 @@ namespace NTwewyDb
             { 100, new PinLevelUpTable(100, 100, new uint[] { 72501,101520,145051,159559,174079,188581,0 }) },
         };
 
+        private readonly Dictionary<byte, Trophy> Trophies = new Dictionary<byte, Trophy>()
+        {
+            { 0, new Trophy(0, 100, 0, "Trophy_01_title", "Trophy_01_summary", "Trophy_01_hint", "Record_trophy_01", 3) },
+            { 1, new Trophy(1, 1, 7, "Trophy_02_title", "Trophy_02_summary", "", "Record_trophy_02", 0) },
+            { 2, new Trophy(2, 2, 14, "Trophy_03_title", "Trophy_03_summary", "", "Record_trophy_03", 1) },
+            { 3, new Trophy(3, 3, 23, "Trophy_04_title", "Trophy_04_summary", "", "Record_trophy_04", 1) },
+            { 4, new Trophy(4, 4, 24, "Trophy_05_title", "Trophy_05_summary", "", "Record_trophy_05", 2) },
+            { 5, new Trophy(5, 5, 0, "Trophy_06_title", "Trophy_06_summary", "Trophy_06_hint", "Record_trophy_06", 0) },
+            { 6, new Trophy(6, 6, 0, "Trophy_07_title", "Trophy_07_summary", "Trophy_07_hint", "Record_trophy_07", 0) },
+            { 7, new Trophy(7, 7, 8, "Trophy_08_title", "Trophy_08_summary", "Trophy_08_hint", "Record_trophy_08", 0) },
+            { 8, new Trophy(8, 8, 20, "Trophy_09_title", "Trophy_09_summary", "Trophy_09_hint", "Record_trophy_09", 0) },
+            { 9, new Trophy(9, 9, 0, "Trophy_10_title", "Trophy_10_summary", "Trophy_10_hint", "Record_trophy_10", 0) },
+            { 10, new Trophy(10, 10, 200, "Trophy_11_title", "Trophy_11_summary", "Trophy_11_hint", "Record_trophy_11", 0) },
+            { 11, new Trophy(11, 11, 1500, "Trophy_12_title", "Trophy_12_summary", "Trophy_12_hint", "Record_trophy_12", 0) },
+            { 12, new Trophy(12, 12, 3000, "Trophy_13_title", "Trophy_13_summary", "Trophy_13_hint", "Record_trophy_13", 0) },
+            { 13, new Trophy(13, 13, 6000, "Trophy_14_title", "Trophy_14_summary", "Trophy_14_hint", "Record_trophy_14", 0) },
+            { 14, new Trophy(14, 14, -1, "Trophy_15_title", "Trophy_15_summary", "Trophy_15_hint", "Record_trophy_15", 1) },
+            { 15, new Trophy(15, 15, 0, "Trophy_16_title", "Trophy_16_summary", "Trophy_16_hint", "Record_trophy_16", 2) },
+            { 16, new Trophy(16, 16, 1, "Trophy_17_title", "Trophy_17_summary", "Trophy_17_hint", "Record_trophy_17", 0) },
+            { 17, new Trophy(17, 17, 8, "Trophy_18_title", "Trophy_18_summary", "Trophy_18_hint", "Record_trophy_18", 0) },
+            { 18, new Trophy(18, 18, 0, "Trophy_19_title", "Trophy_19_summary", "Trophy_19_hint", "Record_trophy_19", 1) },
+            { 19, new Trophy(19, 19, 0, "Trophy_20_title", "Trophy_20_summary", "Trophy_20_hint", "Record_trophy_20", 0) },
+            { 20, new Trophy(20, 20, 0, "Trophy_21_title", "Trophy_21_summary", "Trophy_21_hint", "Record_trophy_21", 0) },
+            { 21, new Trophy(21, 21, 1, "Trophy_22_title", "Trophy_22_summary", "Trophy_22_hint", "Record_trophy_22", 0) },
+            { 22, new Trophy(22, 22, 8, "Trophy_23_title", "Trophy_23_summary", "Trophy_23_hint", "Record_trophy_23", 0) },
+            { 23, new Trophy(23, 23, 0, "Trophy_24_title", "Trophy_24_summary", "Trophy_24_hint", "Record_trophy_24", 0) },
+            { 24, new Trophy(24, 24, 0, "Trophy_25_title", "Trophy_25_summary", "Trophy_25_hint", "Record_trophy_25", 0) },
+            { 25, new Trophy(25, 25, 0, "Trophy_26_title", "Trophy_26_summary", "Trophy_26_hint", "Record_trophy_26", 0) },
+            { 26, new Trophy(26, 26, 0, "Trophy_27_title", "Trophy_27_summary", "Trophy_27_hint", "Record_trophy_27", 0) },
+            { 27, new Trophy(27, 27, 0, "Trophy_28_title", "Trophy_28_summary", "Trophy_28_hint", "Record_trophy_28", 0) },
+            { 28, new Trophy(28, 28, 0, "Trophy_29_title", "Trophy_29_summary", "Trophy_29_hint", "Record_trophy_29", 0) },
+            { 29, new Trophy(29, 29, 100, "Trophy_30_title", "Trophy_30_summary", "Trophy_30_hint", "Record_trophy_30", 0) },
+            { 30, new Trophy(30, 30, 999999, "Trophy_31_title", "Trophy_31_summary", "Trophy_31_hint", "Record_trophy_31", 0) },
+            { 31, new Trophy(31, 31, 100, "Trophy_32_title", "Trophy_32_summary", "Trophy_32_hint", "Record_trophy_32", 0) },
+            { 32, new Trophy(32, 32, 1, "Trophy_33_title", "Trophy_33_summary", "Trophy_33_hint", "Record_trophy_33", 0) },
+            { 33, new Trophy(33, 33, 10, "Trophy_34_title", "Trophy_34_summary", "Trophy_34_hint", "Record_trophy_34", 0) },
+            { 34, new Trophy(34, 34, 30, "Trophy_35_title", "Trophy_35_summary", "Trophy_35_hint", "Record_trophy_35", 0) },
+            { 35, new Trophy(35, 35, 50, "Trophy_36_title", "Trophy_36_summary", "Trophy_36_hint", "Record_trophy_36", 0) },
+            { 36, new Trophy(36, 36, 100, "Trophy_37_title", "Trophy_37_summary", "Trophy_37_hint", "Record_trophy_37", 0) },
+            { 37, new Trophy(37, 37, 200, "Trophy_38_title", "Trophy_38_summary", "Trophy_38_hint", "Record_trophy_38", 0) },
+            { 38, new Trophy(38, 38, 300, "Trophy_39_title", "Trophy_39_summary", "Trophy_39_hint", "Record_trophy_39", 0) },
+            { 39, new Trophy(39, 39, 0, "Trophy_40_title", "Trophy_40_summary", "Trophy_40_hint", "Record_trophy_40", 0) },
+            { 40, new Trophy(40, 40, 0, "Trophy_41_title", "Trophy_41_summary", "Trophy_41_hint", "Record_trophy_41", 0) },
+            { 41, new Trophy(41, 41, 0, "Trophy_42_title", "Trophy_42_summary", "Trophy_42_hint", "Record_trophy_42", 0) },
+            { 42, new Trophy(42, 42, 0, "Trophy_43_title", "Trophy_43_summary", "Trophy_43_hint", "Record_trophy_43", 0) },
+            { 43, new Trophy(43, 43, 15, "Trophy_44_title", "Trophy_44_summary", "Trophy_44_hint", "Record_trophy_44", 0) },
+            { 44, new Trophy(44, 44, 0, "Trophy_45_title", "Trophy_45_summary", "Trophy_45_hint", "Record_trophy_45", 0) },
+            { 45, new Trophy(45, 45, 0, "Trophy_46_title", "Trophy_46_summary", "Trophy_46_hint", "Record_trophy_46", 0) },
+            { 46, new Trophy(46, 46, 0, "Trophy_47_title", "Trophy_47_summary", "Trophy_47_hint", "Record_trophy_47", 0) },
+            { 47, new Trophy(47, 47, 0, "Trophy_48_title", "Trophy_48_summary", "Trophy_48_hint", "Record_trophy_48", 0) },
+            { 48, new Trophy(48, 48, 0, "Trophy_49_title", "Trophy_49_summary", "Trophy_49_hint", "Record_trophy_49", 0) },
+            { 49, new Trophy(49, 49, 0, "Trophy_50_title", "Trophy_50_summary", "Trophy_50_hint", "Record_trophy_50", 0) },
+            { 50, new Trophy(50, 50, 1800, "Trophy_51_title", "Trophy_51_summary", "Trophy_51_hint", "Record_trophy_51", 0) }
+        };
+
+        private readonly Dictionary<byte, TrophyRank> TrophyRanks = new Dictionary<byte, TrophyRank>()
+        {
+            { 0, new TrophyRank(0, "Record_rank_00", 0) },
+            { 1, new TrophyRank(1, "Record_rank_01", 10) },
+            { 2, new TrophyRank(2, "Record_rank_02", 20) },
+            { 3, new TrophyRank(3, "Record_rank_03", 30) },
+            { 4, new TrophyRank(4, "Record_rank_04", 40) },
+            { 5, new TrophyRank(5, "Record_rank_05", 50) },
+            { 6, new TrophyRank(6, "Record_rank_06", 60) },
+            { 7, new TrophyRank(7, "Record_rank_07", 70) },
+            { 8, new TrophyRank(8, "Record_rank_08", 80) },
+            { 9, new TrophyRank(9, "Record_rank_09", 90) },
+            { 10, new TrophyRank(10, "Record_rank_10", 100) }
+        };
+
         #endregion
 
         #region QoL dictionaries
@@ -1644,6 +1714,31 @@ namespace NTwewyDb
             }
 
             return string.Format("PsychicButton_{0}{1}", PsychKeys[Pin.InputKey], PinIsUber(Pin) ? "_God" : string.Empty);
+        }
+
+        public Dictionary<byte, Trophy> GetTrophies()
+        {
+            return Trophies;
+        }
+
+        public Trophy GetTrophy(byte Id)
+        {
+            if (Trophies.ContainsKey(Id))
+            {
+                return Trophies[Id];
+            }
+
+            return null;
+        }
+
+        public TrophyRank GetTrophyRank(byte Id)
+        {
+            if (TrophyRanks.ContainsKey(Id))
+            {
+                return TrophyRanks[Id];
+            }
+
+            return null;
         }
         #endregion
     }
