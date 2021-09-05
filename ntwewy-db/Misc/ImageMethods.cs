@@ -38,7 +38,7 @@ namespace NTwewyDb
             }
         }
 
-        public static Bitmap DrawImage_Percentage(string SpriteFileName, double Percentage, float Dpi = 96)
+        public static Bitmap DrawImage_Percentage(string SpriteFileName, double Percentage, float Dpi = 96, short Angle = 0)
         {
             if (SpriteFileName == null)
             {
@@ -61,6 +61,14 @@ namespace NTwewyDb
                 using (Graphics G = Graphics.FromImage(Result))
                 {
                     G.InterpolationMode = InterpolationMode.HighQualityBicubic;
+
+                    if (Angle != 0)
+                    {
+                        G.TranslateTransform(Result.Width / 2, Result.Height / 2);
+                        G.RotateTransform(Angle);
+                        G.TranslateTransform(-Result.Width / 2, -Result.Height / 2);
+                    }
+
                     G.DrawImage(Source, 0, 0, Width * ScaleFactor, Height * ScaleFactor);
                 }
 
