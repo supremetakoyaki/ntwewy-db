@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Drawing.Drawing2D;
 
 namespace NTwewyDb
@@ -23,6 +24,36 @@ namespace NTwewyDb
                 {
                     return null;
                 }
+
+                float ScaleFactor = Dpi / 96;
+                Bitmap Result = new Bitmap((int)(Width * ScaleFactor), (int)(Height * ScaleFactor));
+
+                using (Graphics G = Graphics.FromImage(Result))
+                {
+                    G.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    G.DrawImage(Source, 0, 0, Width * ScaleFactor, Height * ScaleFactor);
+                }
+
+                return Result;
+            }
+        }
+
+        public static Bitmap DrawImage_Percentage(string SpriteFileName, double Percentage, float Dpi = 96)
+        {
+            if (SpriteFileName == null)
+            {
+                return null;
+            }
+
+            using (Bitmap Source = Resources.ResourceManager.GetObject(SpriteFileName) as Bitmap)
+            {
+                if (Source == null)
+                {
+                    return null;
+                }
+
+                int Height = (int)Math.Round(Source.Height * Percentage);
+                int Width = (int)Math.Round(Source.Width * Percentage);
 
                 float ScaleFactor = Dpi / 96;
                 Bitmap Result = new Bitmap((int)(Width * ScaleFactor), (int)(Height * ScaleFactor));
