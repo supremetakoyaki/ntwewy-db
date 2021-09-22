@@ -24282,7 +24282,7 @@ namespace NTwewyDb
         };
         #endregion
 
-        public string GetLocale(byte LanguageId, string Key)
+        public string GetLocale(int LanguageId, string Key)
         {
             switch (LanguageId)
             {
@@ -24333,7 +24333,7 @@ namespace NTwewyDb
             return Key;
         }
 
-        public string ReverseLookup(byte LanguageId, string Value)
+        public string ReverseLookup(int LanguageId, string Value)
         {
             switch (LanguageId)
             {
