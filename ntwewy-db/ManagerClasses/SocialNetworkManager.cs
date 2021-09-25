@@ -237,6 +237,12 @@ namespace NTwewyDb
             return SkillTreeItems.Where(s => s.Value.ParentId == ParentId && s.Value.SkillId >= 0).ToDictionary(s => s.Key, s => s.Value);
         }
 
+        public Dictionary<ushort, SkillTree> GetSkillTreeItems()
+        {
+            // There are unused entries in the game. We don't want them.
+            return SkillTreeItems.Where(s => s.Value.SkillId >= 0).ToDictionary(s => s.Key, s => s.Value);
+        }
+
         public Dictionary<int, SkillTree> GetSaveIndexedTreeItems()
         {
             return SkillTreeItems_SaveIndexed;
