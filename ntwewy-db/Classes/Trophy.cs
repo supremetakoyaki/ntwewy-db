@@ -22,5 +22,16 @@
             TrophyIcon = trophyIcon;
             TrophyGrade = trophyGrade;
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Trophy trophy &&
+                   Id == trophy.Id;
+        }
+
+        public override int GetHashCode()
+        {
+            return 2108858624 + Id.GetHashCode();
+        }
     }
 }
