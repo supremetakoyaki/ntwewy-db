@@ -29,6 +29,7 @@ namespace NTwewyDbGenerator
             Console.WriteLine("11. Pin Level Up Table");
             Console.WriteLine("12. Turf War");
             Console.WriteLine("13. Trophy");
+            Console.WriteLine("14. Shop Goods");
 
             Console.WriteLine();
             Console.Write("Select a dictionary: ");
@@ -89,6 +90,10 @@ namespace NTwewyDbGenerator
 
                 case "13":
                     GenerateTrophyData();
+                    break;
+
+                case "14":
+                    GenerateShopGoodsData();
                     break;
 
                 default:
@@ -1269,6 +1274,63 @@ namespace NTwewyDbGenerator
             Builder.AppendLine("        };");
 
             File.WriteAllText("output_dictionary_trophy.cs", Builder.ToString());
+        }
+
+        public static void GenerateShopGoodsData()
+        {
+            string json_shopgoods = File.ReadAllText("ShopGoods.txt");
+            dynamic array_shopgoods = JsonConvert.DeserializeObject(json_shopgoods);
+
+            StringBuilder Builder = new StringBuilder();
+            Builder.AppendLine("        private readonly Dictionary<ushort, ShopGood> ShopGoods = new Dictionary<ushort, ShopGood>()");
+            Builder.AppendLine("        {");
+
+            foreach (var shopGood in array_shopgoods.mTarget)
+            {
+                int Id = (int)shopGood.mId;
+                int Shop = (int)shopGood.mShop;
+                int Item = (int)shopGood.mItem;
+                string ItemCount = "new byte[] { " + string.Join(",", shopGood.mItemCount.ToObject<List<int>>()) + " }";
+                int Price = (int)shopGood.mPrice;
+                int Exchange = (int)shopGood.mExchange;
+                int ReleaseVip = (int)shopGood.mReleaseVip;
+                int ReleaseDay = (int)shopGood.mReleaseDay;
+                int ReleaseRegular = (int)shopGood.mReleaseRegular;
+                int ReleaseSkill = (int)shopGood.mReleaseSkill;
+                int SortIndex = (int)shopGood.mSortIndex;
+                int SaveIndex = (int)shopGood.mSaveIndex;
+                string GoodsName = "\"" + (string)shopGood.mGoodsName + "\"";
+                int ReleaseParam = (int)shopGood.mReleaseParam;
+
+                Builder.Append("            { ");
+                Builder.Append(Id);
+                Builder.Append(", ");
+
+                //        public TurfWar(ushort id, string title, string ruleTitle, string[] rule, string sub, byte rewards, ushort noise, int scenario, string startDataSo, byte hideTeam, string mapOpenArea, int saveIndex)
+
+                string Constructor = string.Format("new ShopGood({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13})",
+                    Id,
+                    Shop,
+                    Item,
+                    ItemCount,
+                    Price,
+                    Exchange,
+                    ReleaseVip,
+                    ReleaseDay,
+                    ReleaseRegular,
+                    ReleaseSkill,
+                    SortIndex,
+                    SaveIndex,
+                    GoodsName,
+                    ReleaseParam);
+
+                Builder.Append(Constructor);
+
+                Builder.AppendLine(" },");
+            }
+
+            Builder.AppendLine("        };");
+            File.WriteAllText("output_dictionary_shopgoods.cs", Builder.ToString());
         }
     }
 }

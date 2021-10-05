@@ -2,7 +2,7 @@
 {
     public class Shop
     {
-        public int Id { get; set; }
+        public sbyte Id { get; set; }
         public string Name { get; set; }
         public string ShopCategory { get; set; }
         public int ShopType { get; set; }
@@ -19,7 +19,7 @@
         public ushort[] RegularVip { get; set; }
         public ushort[] ShopTalk { get; set; }
 
-        public Shop(int id, string name, string shopCategory, int shopType, byte brand, ushort symbolItem, int skillId, int staffId, ushort bgm, string background, bool changeBackground, int saveIndex, ushort[] regularBuy, ushort[] regularDay, ushort[] regularVip, ushort[] shopTalk)
+        public Shop(sbyte id, string name, string shopCategory, int shopType, byte brand, ushort symbolItem, int skillId, int staffId, ushort bgm, string background, bool changeBackground, int saveIndex, ushort[] regularBuy, ushort[] regularDay, ushort[] regularVip, ushort[] shopTalk)
         {
             Id = id;
             Name = name;
