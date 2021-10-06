@@ -2205,6 +2205,11 @@ namespace NTwewyDb
         {
             return Shops;
         }
+
+        public Dictionary<byte, Brand> GetBrands()
+        {
+            return Brands;
+        }
         
         public IOrderedEnumerable<ShopGood> GetShopGoods(sbyte ShopId)
         {
