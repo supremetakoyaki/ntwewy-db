@@ -1,6 +1,8 @@
-﻿namespace NTwewyDb
+﻿using System;
+
+namespace NTwewyDb
 {
-    public class Shop
+    public class Shop : IEquatable<Shop>
     {
         public sbyte Id { get; set; }
         public string Name { get; set; }
@@ -37,6 +39,22 @@
             RegularDay = regularDay;
             RegularVip = regularVip;
             ShopTalk = shopTalk;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as Shop);
+        }
+
+        public bool Equals(Shop other)
+        {
+            return other != null &&
+                   Id == other.Id;
+        }
+
+        public override int GetHashCode()
+        {
+            return 2108858624 + Id.GetHashCode();
         }
     }
 }
