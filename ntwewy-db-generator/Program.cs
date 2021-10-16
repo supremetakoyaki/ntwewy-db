@@ -30,6 +30,7 @@ namespace NTwewyDbGenerator
             Console.WriteLine("12. Turf War");
             Console.WriteLine("13. Trophy");
             Console.WriteLine("14. Shop Goods");
+            Console.WriteLine("15. Scenario");
 
             Console.WriteLine();
             Console.Write("Select a dictionary: ");
@@ -94,6 +95,10 @@ namespace NTwewyDbGenerator
 
                 case "14":
                     GenerateShopGoodsData();
+                    break;
+
+                case "15":
+                    GenerateScenarioData();
                     break;
 
                 default:
@@ -1331,6 +1336,44 @@ namespace NTwewyDbGenerator
 
             Builder.AppendLine("        };");
             File.WriteAllText("output_dictionary_shopgoods.cs", Builder.ToString());
+        }
+
+        public static void GenerateScenarioData()
+        {
+            string json_scenario = File.ReadAllText("Scenario.txt");
+            dynamic array_scenario = JsonConvert.DeserializeObject(json_scenario);
+
+            StringBuilder Builder = new StringBuilder();
+            Builder.AppendLine("        private readonly Dictionary<uint, Scenario> Scenarios = new Dictionary<uint, Scenario>()");
+            Builder.AppendLine("        {");
+
+            foreach (var scenarioData in array_scenario.mTarget)
+            {
+
+                int Id = (int)scenarioData.mId;
+                int Category = (int)scenarioData.mCategory;
+                int[] Belong = scenarioData.mBelong.ToObject<List<int>>().ToArray();
+                string Access = (bool)scenarioData.mAccess ? "true" : "false";
+                int SaveIndex = (int)scenarioData.mSaveIndex;
+
+                string Constructor = string.Format("new Scenario({0}, {1}, {2}, {3}, {4})",
+                    Id,
+                    "(ScenarioCategory)" + Category,
+                    "new ScenarioBelong[] { (ScenarioBelong)" + string.Join(", (ScenarioBelong)", Belong) + " }",
+                    Access,
+                    SaveIndex);
+
+                Builder.Append("            { ");
+                Builder.Append(Id);
+                Builder.Append(", ");
+                Builder.Append(Constructor);
+
+                Builder.AppendLine(" },");
+            }
+
+            Builder.AppendLine("        };");
+            File.WriteAllText("output_dictionary_scenario.cs", Builder.ToString());
+
         }
     }
 }
