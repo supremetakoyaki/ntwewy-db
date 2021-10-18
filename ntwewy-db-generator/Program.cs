@@ -31,6 +31,8 @@ namespace NTwewyDbGenerator
             Console.WriteLine("13. Trophy");
             Console.WriteLine("14. Shop Goods");
             Console.WriteLine("15. Scenario");
+            Console.WriteLine("16. Event");
+            Console.WriteLine("17. EventData, EventLog & EventLogSelect");
 
             Console.WriteLine();
             Console.Write("Select a dictionary: ");
@@ -99,6 +101,14 @@ namespace NTwewyDbGenerator
 
                 case "15":
                     GenerateScenarioData();
+                    break;
+
+                case "16":
+                    GenerateEventData();
+                    break;
+
+                case "17":
+                    GenerateEventOther();
                     break;
 
                 default:
@@ -1373,7 +1383,144 @@ namespace NTwewyDbGenerator
 
             Builder.AppendLine("        };");
             File.WriteAllText("output_dictionary_scenario.cs", Builder.ToString());
+        }
 
+        public static void GenerateEventData()
+        {
+            string json_event = File.ReadAllText("Event.txt");
+            dynamic array_event = JsonConvert.DeserializeObject(json_event);
+
+            StringBuilder Builder = new StringBuilder();
+            Builder.AppendLine("        private readonly Dictionary<uint, Event> Events = new Dictionary<uint, Event>()");
+            Builder.AppendLine("        {");
+
+            foreach (var eventData in array_event.mTarget)
+            {
+                /*		"mId": 50100200,
+		"mSaveIndex": 101,
+		"mBelong": 50010,
+		"mPriority": 0,
+		"mResultUpdate": false,
+		"mSetData": false*/
+
+                int Id = (int)eventData.mId;
+                int SaveIndex = (int)eventData.mSaveIndex;
+                int Belong = (int)eventData.mBelong;
+                int Priority = (int)eventData.mPriority;
+                string ResultUpdate = (bool)eventData.mResultUpdate ? "true" : "false";
+                string SetData = (bool)eventData.mSetData ? "true" : "false";
+
+                string Constructor = string.Format("new Event({0}, {1}, {2}, {3}, {4}, {5})",
+                    Id,
+                    SaveIndex,
+                    "(ScenarioBelong)" + Belong,
+                    Priority,
+                    ResultUpdate,
+                    SetData);
+
+                Builder.Append("            { ");
+                Builder.Append(Id);
+                Builder.Append(", ");
+                Builder.Append(Constructor);
+
+                Builder.AppendLine(" },");
+            }
+
+            Builder.AppendLine("        };");
+            File.WriteAllText("output_dictionary_event.cs", Builder.ToString());
+        }
+
+        public static void GenerateEventOther()
+        {
+            string json_eventdata = File.ReadAllText("EventData.txt");
+            dynamic array_eventdata = JsonConvert.DeserializeObject(json_eventdata);
+
+            StringBuilder Builder = new StringBuilder();
+            Builder.AppendLine("        private readonly Dictionary<uint, EventData> EventDataDic = new Dictionary<uint, EventData>()");
+            Builder.AppendLine("        {");
+
+            foreach (var eventDataData in array_eventdata.mTarget)
+            {
+                /*		"mId": 50100200,
+		"mSaveIndex": 101,
+		"mBelong": 50010,
+		"mPriority": 0,
+		"mResultUpdate": false,
+		"mSetData": false*/
+
+                int Id = (int)eventDataData.mId;
+                int EventId = (int)eventDataData.mEventId;
+                int SaveIndex = (int)eventDataData.mSaveIndex;
+
+                string Constructor = string.Format("new EventData({0}, {1}, {2})",
+                    Id,
+                    EventId,
+                    SaveIndex);
+
+                Builder.Append("            { ");
+                Builder.Append(Id);
+                Builder.Append(", ");
+                Builder.Append(Constructor);
+
+                Builder.AppendLine(" },");
+            }
+
+            Builder.AppendLine("        };");
+            Builder.AppendLine();
+
+            string json_eventlog = File.ReadAllText("EventLog.txt");
+            dynamic array_eventlog = JsonConvert.DeserializeObject(json_eventlog);
+
+            Builder.AppendLine("        private readonly Dictionary<ushort, EventLog> EventLogs = new Dictionary<ushort, EventLog>()");
+            Builder.AppendLine("        {");
+
+            foreach (var eventlogData in array_eventlog.mTarget)
+            {
+                int Id = (int)eventlogData.mId;
+                int SaveId = (int)eventlogData.mSaveId;
+                int Chapter = (int)eventlogData.mChapter;
+
+                string Constructor = string.Format("new EventLog({0}, {1}, {2})",
+                    Id,
+                    SaveId,
+                    Chapter);
+
+                Builder.Append("            { ");
+                Builder.Append(Id);
+                Builder.Append(", ");
+                Builder.Append(Constructor);
+
+                Builder.AppendLine(" },");
+            }
+            Builder.AppendLine("        };");
+            Builder.AppendLine();
+
+            string json_eventlogselect = File.ReadAllText("EventLogSelect.txt");
+            dynamic array_eventlogselect = JsonConvert.DeserializeObject(json_eventlogselect);
+
+            Builder.AppendLine("        private readonly Dictionary<byte, EventLogSelect> EventLogSelectDic = new Dictionary<byte, EventLogSelect>()");
+            Builder.AppendLine("        {");
+
+            foreach (var eventlogselectData in array_eventlogselect.mTarget)
+            {
+                int Id = (int)eventlogselectData.mId;
+                int SaveId = (int)eventlogselectData.mSaveId;
+
+                string Constructor = string.Format("new EventLogSelect({0}, {1})",
+                    Id,
+                    SaveId);
+
+                Builder.Append("            { ");
+                Builder.Append(Id);
+                Builder.Append(", ");
+                Builder.Append(Constructor);
+
+                Builder.AppendLine(" },");
+            }
+            Builder.AppendLine("        };");
+            Builder.AppendLine();
+
+            File.WriteAllText("output_dictionary_eventdata_eventlog_eventlogselect.cs", Builder.ToString());
         }
     }
 }
