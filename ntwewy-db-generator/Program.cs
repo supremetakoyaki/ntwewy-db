@@ -33,6 +33,8 @@ namespace NTwewyDbGenerator
             Console.WriteLine("15. Scenario");
             Console.WriteLine("16. Event");
             Console.WriteLine("17. EventData, EventLog & EventLogSelect");
+            Console.WriteLine("18. Chapter");
+            Console.WriteLine("19. Id Dictionary");
 
             Console.WriteLine();
             Console.Write("Select a dictionary: ");
@@ -109,6 +111,14 @@ namespace NTwewyDbGenerator
 
                 case "17":
                     GenerateEventOther();
+                    break;
+
+                case "18":
+                    GenerateChapterData();
+                    break;
+
+                case "19":
+                    GenerateIdDictionary();
                     break;
 
                 default:
@@ -1521,6 +1531,124 @@ namespace NTwewyDbGenerator
             Builder.AppendLine();
 
             File.WriteAllText("output_dictionary_eventdata_eventlog_eventlogselect.cs", Builder.ToString());
+        }
+
+        public static void GenerateChapterData()
+        {
+            string json_chapter = File.ReadAllText("Chapter.txt");
+            dynamic array_chapter = JsonConvert.DeserializeObject(json_chapter);
+
+            StringBuilder Builder = new StringBuilder();
+            Builder.AppendLine("        private readonly Dictionary<byte, Chapter> Chapters = new Dictionary<byte, Chapter>()");
+            Builder.AppendLine("        {");
+
+            foreach (var chapterData in array_chapter.mTarget)
+            {
+                /*		
+                 
+                 
+        "mId": 24,
+		"mChapterName": "Day_Name_another",
+		"mChapterTitle": "Chapter_title_another",
+		"mChapterSummary": "Chapter_summary_another",
+		"mChapterBg": "Chapter_img24",
+		"mChapterIcon": "Chapter_btn24",
+		"mLogTextFile": "EVEw4d1",
+		"mSubmissionSkill": [
+
+		],
+		"mPigNoise": [
+			39,
+			40,
+			41,
+			42,
+			43
+		],
+		"mDiveId": [
+			40100
+		],
+		"mStruggleId": -1
+                */
+
+                int Id = (int)chapterData.mId;
+                string ChapterName = (string)chapterData.mChapterName;
+                string ChapterTitle = (string)chapterData.mChapterTitle;
+                string ChapterSummary = (string)chapterData.mChapterSummary;
+                string ChapterBg = (string)chapterData.mChapterBg;
+                string ChapterIcon = (string)chapterData.mChapterIcon;
+                string LogTextFile = (string)chapterData.mLogTextFile;
+
+                string SubmissionSkill = "new byte[] { " + string.Join(", ", chapterData.mSubmissionSkill.ToObject<List<int>>()) + " }";
+                string PigNoise = "new uint[] { " + string.Join(", ", chapterData.mPigNoise.ToObject<List<int>>()) + " }";
+                string DiveId = "new uint[] { " + string.Join(", ", chapterData.mDiveId.ToObject<List<int>>()) + "}";
+
+                if (SubmissionSkill == "new byte[] { }")
+                {
+                    SubmissionSkill = "null";
+                }
+
+                if (PigNoise == "new uint[] { }")
+                {
+                    PigNoise = "null";
+                }
+
+                if (DiveId == "new uint[] { }")
+                {
+                    DiveId = "null";
+                }
+
+                int StruggleId = (int)chapterData.mStruggleId;
+
+                string Constructor = string.Format("new Chapter({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10})",
+                    Id,
+                    "\"" + ChapterName + "\"",
+                    "\"" + ChapterTitle + "\"",
+                    "\"" + ChapterSummary + "\"",
+                    "\"" + ChapterBg + "\"",
+                    "\"" + ChapterIcon + "\"",
+                    "\"" + LogTextFile + "\"",
+                    SubmissionSkill,
+                    PigNoise,
+                    DiveId,
+                    StruggleId
+                    );
+
+                Builder.Append("            { ");
+                Builder.Append(Id);
+                Builder.Append(", ");
+                Builder.Append(Constructor);
+
+                Builder.AppendLine(" },");
+            }
+
+            Builder.AppendLine("        };");
+            File.WriteAllText("output_dictionary_chapter.cs", Builder.ToString());
+        }
+
+        public static void GenerateIdDictionary()
+        {
+            string json_iddic = File.ReadAllText("IdDic.json");
+            dynamic array_iddic = JsonConvert.DeserializeObject(json_iddic);
+
+            StringBuilder Builder = new StringBuilder();
+            Builder.AppendLine("        private readonly Dictionary<string, uint> IdDic = new Dictionary<string, uint>()");
+            Builder.AppendLine("        {");
+
+            foreach (var idData in array_iddic.columns)
+            {
+                string Key = (string)idData.key;
+                uint Id = (uint)idData.id;
+
+                Builder.Append("            { ");
+                Builder.Append("\"" + Key + "\"");
+                Builder.Append(", ");
+                Builder.Append(Id);
+
+                Builder.AppendLine(" },");
+            }
+
+            Builder.AppendLine("        };");
+            File.WriteAllText("output_dictionary_iddic.cs", Builder.ToString());
         }
     }
 }

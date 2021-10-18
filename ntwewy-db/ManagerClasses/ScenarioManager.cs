@@ -4629,6 +4629,35 @@ namespace NTwewyDb
             { 88, new EventLogSelect(88, -1) },
         };
 
+        private readonly Dictionary<byte, Chapter> Chapters = new Dictionary<byte, Chapter>()
+        {
+            { 0, new Chapter(0, "Day_Name_w1d0", "Chapter_title_w1d0", "Chapter_summary_w1d0", "Chapter_img00", "Chapter_btn00", "EVEw1d0", new byte[] {  }, new uint[] {  }, null, -1) },
+            { 1, new Chapter(1, "Day_Name_w1d1", "Chapter_title_w1d1", "Chapter_summary_w1d1", "Chapter_img01", "Chapter_btn01", "EVEw1d1", new byte[] {  }, new uint[] {  }, null, -1) },
+            { 2, new Chapter(2, "Day_Name_w1d2", "Chapter_title_w1d2", "Chapter_summary_w1d2", "Chapter_img02", "Chapter_btn02", "EVEw1d2", new byte[] {  }, new uint[] { 1 }, null, -1) },
+            { 3, new Chapter(3, "Day_Name_w1d3", "Chapter_title_w1d3", "Chapter_summary_w1d3", "Chapter_img03", "Chapter_btn03", "EVEw1d3", new byte[] {  }, new uint[] { 2, 3 }, null, -1) },
+            { 4, new Chapter(4, "Day_Name_w1d4", "Chapter_title_w1d4", "Chapter_summary_w1d4", "Chapter_img04", "Chapter_btn04", "EVEw1d4", new byte[] { 26, 28, 33 }, new uint[] { 4, 5 }, new uint[] { 10400, 10401, 10403}, -1) },
+            { 5, new Chapter(5, "Day_Name_w1d5", "Chapter_title_w1d5", "Chapter_summary_w1d5", "Chapter_img05", "Chapter_btn05", "EVEw1d5", new byte[] { 29, 42, 44 }, new uint[] {  }, new uint[] { 10500, 10501, 10502}, -1) },
+            { 6, new Chapter(6, "Day_Name_w1d6", "Chapter_title_w1d6", "Chapter_summary_w1d6", "Chapter_img06", "Chapter_btn06", "EVEw1d6", new byte[] {  }, new uint[] { 6, 7 }, null, 0) },
+            { 7, new Chapter(7, "Day_Name_w1d7", "Chapter_title_w1d7", "Chapter_summary_w1d7", "Chapter_img07", "Chapter_btn07", "EVEw1d7", new byte[] { 36, 45 }, new uint[] { 8, 9 }, new uint[] { 10503}, -1) },
+            { 8, new Chapter(8, "Day_Name_w2d1", "Chapter_title_w2d1", "Chapter_summary_w2d1", "Chapter_img08", "Chapter_btn08", "EVEw2d1", new byte[] { 31 }, new uint[] { 10, 11 }, new uint[] { 20000, 20001}, -1) },
+            { 9, new Chapter(9, "Day_Name_w2d2", "Chapter_title_w2d2", "Chapter_summary_w2d2", "Chapter_img09", "Chapter_btn09", "EVEw2d2", new byte[] { 38, 46 }, new uint[] { 12, 13 }, new uint[] { 20200, 20201}, -1) },
+            { 10, new Chapter(10, "Day_Name_w2d3", "Chapter_title_w2d3", "Chapter_summary_w2d3", "Chapter_img10", "Chapter_btn10", "EVEw2d3", new byte[] {  }, new uint[] { 14, 15 }, null, 230) },
+            { 11, new Chapter(11, "Day_Name_w2d4", "Chapter_title_w2d4", "Chapter_summary_w2d4", "Chapter_img11", "Chapter_btn11", "EVEw2d4", new byte[] { 30, 34, 47 }, new uint[] { 16, 17 }, new uint[] { 20400, 20401}, -1) },
+            { 12, new Chapter(12, "Day_Name_w2d5", "Chapter_title_w2d5", "Chapter_summary_w2d5", "Chapter_img12", "Chapter_btn12", "EVEw2d5", new byte[] { 27, 41, 43 }, new uint[] { 18, 19 }, new uint[] { 20500}, -1) },
+            { 13, new Chapter(13, "Day_Name_w2d6", "Chapter_title_w2d6", "Chapter_summary_w2d6", "Chapter_img13", "Chapter_btn13", "EVEw2d6", new byte[] {  }, new uint[] { 20, 21 }, null, 260) },
+            { 14, new Chapter(14, "Day_Name_w2d7", "Chapter_title_w2d7", "Chapter_summary_w2d7", "Chapter_img14", "Chapter_btn14", "EVEw2d7", new byte[] { 32, 37 }, new uint[] { 22, 23 }, null, -1) },
+            { 15, new Chapter(15, "Day_Name_w3d1", "Chapter_title_w3d1", "Chapter_summary_w3d1", "Chapter_img15", "Chapter_btn15", "EVEw3d1", new byte[] { 35, 40, 48 }, new uint[] { 24, 25 }, new uint[] { 30100, 30101}, -1) },
+            { 16, new Chapter(16, "Day_Name_w3d2", "Chapter_title_w3d2", "Chapter_summary_w3d2", "Chapter_img16", "Chapter_btn16", "EVEw3d2", new byte[] { 39, 49, 62 }, new uint[] { 26, 27 }, new uint[] { 30200}, -1) },
+            { 17, new Chapter(17, "Day_Name_w3d3", "Chapter_title_w3d3", "Chapter_summary_w3d3", "Chapter_img17", "Chapter_btn17", "EVEw3d3", new byte[] {  }, new uint[] { 28, 29 }, new uint[] { 30300, 30301}, -1) },
+            { 18, new Chapter(18, "Day_Name_w3d4", "Chapter_title_w3d4", "Chapter_summary_w3d4", "Chapter_img18", "Chapter_btn18", "EVEw3d4", new byte[] { 50, 63 }, new uint[] { 30, 31 }, new uint[] { 30400}, -1) },
+            { 19, new Chapter(19, "Day_Name_w3d5", "Chapter_title_w3d5", "Chapter_summary_w3d5", "Chapter_img19", "Chapter_btn19", "EVEw3d5", new byte[] {  }, new uint[] { 32, 33, 34 }, null, -1) },
+            { 20, new Chapter(20, "Day_Name_w3d6", "Chapter_title_w3d6", "Chapter_summary_w3d6", "Chapter_img20", "Chapter_btn20", "EVEw3d6", new byte[] { 51 }, new uint[] { 35, 36 }, new uint[] { 30600}, -1) },
+            { 21, new Chapter(21, "Day_Name_w3d7", "Chapter_title_w3d7", "Chapter_summary_w3d7", "Chapter_img21", "Chapter_btn21", "EVEw3d7", new byte[] {  }, new uint[] { 37, 38 }, null, -1) },
+            { 22, new Chapter(22, "Day_Name_w3d8", "Chapter_title_w3d8", "Chapter_summary_w3d8", "Chapter_img22", "Chapter_btn22", "EVEw3d8", new byte[] {  }, new uint[] {  }, null, -1) },
+            { 23, new Chapter(23, "Day_Name_w3d9", "Chapter_title_w3d9", "Chapter_summary_w3d9", "Chapter_img23", "Chapter_btn23", "EVEw3d9", new byte[] {  }, new uint[] {  }, null, -1) },
+            { 24, new Chapter(24, "Day_Name_another", "Chapter_title_another", "Chapter_summary_another", "Chapter_img24", "Chapter_btn24", "EVEw4d1", new byte[] {  }, new uint[] { 39, 40, 41, 42, 43 }, new uint[] { 40100}, -1) },
+        };
+
         public Dictionary<uint, Scenario> GetScenarios()
         {
             return Scenarios;
@@ -4652,6 +4681,11 @@ namespace NTwewyDb
         public Dictionary<byte, EventLogSelect> GetEventLogSelects()
         {
             return EventLogSelectDic;
+        }
+
+        public Dictionary<byte, Chapter> GetChapters()
+        {
+            return Chapters;
         }
 
         public ScenarioCategory[] GetScenarioCategories()
@@ -4724,6 +4758,16 @@ namespace NTwewyDb
             if (EventLogSelectDic.ContainsKey(Id))
             {
                 return EventLogSelectDic[Id];
+            }
+
+            return null;
+        }
+
+        public Chapter GetChapter(byte Id)
+        {
+            if (Chapters.ContainsKey(Id))
+            {
+                return Chapters[Id];
             }
 
             return null;
