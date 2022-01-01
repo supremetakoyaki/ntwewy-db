@@ -265,6 +265,81 @@
   <data name="brand_15" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\brand_15.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Chapter_btn00" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn00.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn04" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn05" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn05.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn06" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn06.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn07" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn07.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn08" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn08.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn09" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn09.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn15" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn15.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn17" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn17.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn18" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn18.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn19" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn19.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn23" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn23.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter_btn24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Chapter_btn24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="CHR_Main_001" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\CHR_Main_001.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
