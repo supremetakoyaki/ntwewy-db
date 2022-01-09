@@ -803,6 +803,16 @@ namespace NTwewyDb {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Chapter_pig_icon01 {
+            get {
+                object obj = ResourceManager.GetObject("Chapter_pig_icon01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CHR_Main_001 {
             get {
                 object obj = ResourceManager.GetObject("CHR_Main_001", resourceCulture);
@@ -1856,6 +1866,16 @@ namespace NTwewyDb {
         internal static System.Drawing.Bitmap Dive_icon_medal_05 {
             get {
                 object obj = ResourceManager.GetObject("Dive_icon_medal_05", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Friendship_icon {
+            get {
+                object obj = ResourceManager.GetObject("Friendship_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

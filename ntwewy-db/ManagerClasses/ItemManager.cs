@@ -2216,6 +2216,11 @@ namespace NTwewyDb
             return ShopGoods.Values.Where(g => g.Shop == ShopId).OrderBy(g => g.SortIndex);
         }
 
+        public Dictionary<ushort, ShopGood> GetShopGoods()
+        {
+            return ShopGoods;
+        }
+
         public IGameItem GetItem(ushort Id)
         {
             if (GameItems.ContainsKey(Id))
