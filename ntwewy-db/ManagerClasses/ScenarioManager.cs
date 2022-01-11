@@ -4658,6 +4658,40 @@ namespace NTwewyDb
             { 24, new Chapter(24, "Day_Name_another", "Chapter_title_another", "Chapter_summary_another", "Chapter_img24", "Chapter_btn24", "EVEw4d1", new byte[] {  }, new uint[] { 39, 40, 41, 42, 43 }, new uint[] { 40100}, -1) },
         };
 
+        private readonly Dictionary<uint, Dive> NagiDives = new Dictionary<uint, Dive>()
+        {
+            { 10400, new Dive(10400, 14, "DiveMapEnv_TypeRage", 2, 9994, 9, 180, 31, 43, 180, -1, 2, -1, 2, -1, 2, 0) },
+            { 10401, new Dive(10401, 14, "DiveMapEnv_TypeSorrow", 3, 9993, 9, 180, 55, 65, 180, -1, 2, -1, 2, -1, 2, 1) },
+            { 10402, new Dive(10402, -1, "DiveMapEnv_TypeA", 2, 9992, 9, 300, 120, 0, 300, -1, 2, -1, 2, -1, 2, 2) },
+            { 10403, new Dive(10403, 14, "DiveMapEnv_TypeFear", 4, 9991, 9, 180, 65, 85, 180, -1, 2, -1, 2, -1, 2, 3) },
+            { 10500, new Dive(10500, 15, "DiveMapEnv_Rage-Rage-Fear", 2, 9990, 11, 180, 39, 60, 180, -1, 2, -1, 2, -1, 2, 4) },
+            { 10501, new Dive(10501, 15, "DiveMapEnv_Rage-Sorrow-Rage", 2, 9989, 11, 180, 48, 65, 180, -1, 2, -1, 2, -1, 2, 5) },
+            { 10502, new Dive(10502, 15, "DiveMapEnv_Rage-Rage-Fear", 2, 9988, 19, 180, 58, 62, 180, -1, 2, -1, 2, -1, 2, 6) },
+            { 10503, new Dive(10503, 17, "DiveMapEnv_Rage-Fear-Sorrow", 3, 9987, 25, 180, 80, 98, 180, -1, 2, -1, 2, -1, 2, 7) },
+            { 20000, new Dive(20000, 21, "DiveMapEnv_Rage-Sorrow-Fear", 4, 9986, 24, 180, 80, 100, 180, -1, 2, -1, 2, -1, 2, 8) },
+            { 20001, new Dive(20001, 21, "DiveMapEnv_Rage-Fear-Rage", 2, 9985, 24, 180, 88, 100, 180, -1, 2, -1, 2, -1, 2, 9) },
+            { 20200, new Dive(20200, 22, "DiveMapEnv_Sorrow-Fear-Sorrow", 2, 9984, 25, 200, 110, 135, 200, -1, 2, -1, 2, -1, 2, 10) },
+            { 20201, new Dive(20201, 22, "DiveMapEnv_Sorrow-Sorrow-Rage", 3, 9983, 29, 200, 110, 150, 200, -1, 2, -1, 2, -1, 2, 11) },
+            { 20400, new Dive(20400, 24, "DiveMapEnv_Fear-Rage-Rage", 2, 9982, 30, 300, 120, 180, 300, -1, 2, -1, 2, -1, 2, 12) },
+            { 20401, new Dive(20401, 24, "DiveMapEnv_Sorrow-Peace-Rage-Sorrow", 3, 9981, 33, 300, 170, 200, 300, -1, 2, -1, 2, -1, 2, 13) },
+            { 20500, new Dive(20500, 25, "DiveMapEnv_Fear-Sorrow-Sorrow", 3, 9980, 34, 300, 110, 140, 300, -1, 2, -1, 2, -1, 2, 14) },
+            { 30100, new Dive(30100, 31, "DiveMapEnv_TypeFear", 4, 9979, 36, 300, 140, 205, 300, -1, 2, -1, 2, -1, 2, 15) },
+            { 30101, new Dive(30101, 31, "DiveMapEnv_Rage-Peace-Peace-Rage", 2, 9978, 39, 200, 110, 140, 200, -1, 2, -1, 2, -1, 2, 16) },
+            { 30200, new Dive(30200, 32, "DiveMapEnv_Sorrow-Rage-Rage-Fear", 2, 9977, 38, 250, 150, 190, 250, -1, 2, -1, 2, -1, 2, 17) },
+            { 30201, new Dive(30201, -1, "DiveMapEnv_TypeSorrow", 3, 9976, 39, 30, 120, 0, 30, -1, 2, -1, 2, -1, 2, 18) },
+            { 30300, new Dive(30300, 33, "DiveMapEnv_Rage-Sorrow-Fear", 4, 9975, 40, 200, 70, 125, 200, -1, 2, -1, 2, -1, 2, 19) },
+            { 30301, new Dive(30301, 33, "DiveMapEnv_Rage-Rage-Sorrow-Fear-Rage", 2, 9974, 40, 350, 175, 240, 350, -1, 2, -1, 2, -1, 2, 20) },
+            { 30302, new Dive(30302, -1, "DiveMapEnv_TypeRage", 2, 9973, 40, 300, 120, 0, 300, -1, 2, -1, 2, -1, 2, 21) },
+            { 30400, new Dive(30400, 34, "DiveMapEnv_TypeFear", 4, 9972, 45, 150, 80, 120, 150, -1, 2, -1, 2, -1, 2, 22) },
+            { 30600, new Dive(30600, 36, "DiveMapEnv_Fear-Peace-Fear-Peace-Fear", 4, 9971, 50, 450, 350, 380, 450, -1, 2, -1, 2, -1, 2, 23) },
+            { 40100, new Dive(40100, 41, "DiveMapEnv_Fear-Rage-Fear-Fear-Rage-Peace-Fear-Peace-Rage-Rage", 4, 9970, 80, 1500, 650, 750, 1500, -1, 5, -1, 5, -1, 5, 24) },
+            { 1000000, new Dive(1000000, -1, "DiveMapEnv_TypeA", 2, 9999, 10, 300, 120, 180, 240, 1000, 0, 1001, 0, 1002, 0, 31) },
+            { 1000010, new Dive(1000010, -1, "DiveMapEnv_TypeA", 2, 9998, 1, 60, 10, 20, 30, -1, 2, -1, 2, -1, 2, 31) },
+            { 1000020, new Dive(1000020, -1, "DiveMapEnv_TypeB", 2, 9997, 30, 90, 45, 60, 80, -1, 0, -1, 0, -1, 0, 31) },
+            { 1000030, new Dive(1000030, -1, "DiveMapEnv_TypeB", 2, 9996, 50, 90, 45, 60, 80, -1, 0, -1, 0, -1, 0, 31) },
+            { 1000040, new Dive(1000040, -1, "DiveMapEnv_TypeA", 2, 9995, 30, 90, 45, 60, 80, -1, 0, -1, 0, -1, 0, 31) },
+        };
+
         public Dictionary<uint, Scenario> GetScenarios()
         {
             return Scenarios;
@@ -4711,6 +4745,11 @@ namespace NTwewyDb
         public IEnumerable<Event> GetEventsForBelong(ScenarioBelong Belong)
         {
             return Events.Values.Where(e => e.Belong == Belong);
+        }
+
+        public Dictionary<uint, Dive> GetDives()
+        {
+            return NagiDives;
         }
 
         public Scenario GetScenario(uint Id)
@@ -4768,6 +4807,16 @@ namespace NTwewyDb
             if (Chapters.ContainsKey(Id))
             {
                 return Chapters[Id];
+            }
+
+            return null;
+        }
+
+        public Dive GetDive(uint Id)
+        {
+            if (NagiDives.ContainsKey(Id))
+            {
+                return NagiDives[Id];
             }
 
             return null;

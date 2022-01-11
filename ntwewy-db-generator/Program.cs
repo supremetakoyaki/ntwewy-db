@@ -35,6 +35,7 @@ namespace NTwewyDbGenerator
             Console.WriteLine("17. EventData, EventLog & EventLogSelect");
             Console.WriteLine("18. Chapter");
             Console.WriteLine("19. Id Dictionary");
+            Console.WriteLine("20. Dive Data");
 
             Console.WriteLine();
             Console.Write("Select a dictionary: ");
@@ -119,6 +120,10 @@ namespace NTwewyDbGenerator
 
                 case "19":
                     GenerateIdDictionary();
+                    break;
+
+                case "20":
+                    GenerateDiveData();
                     break;
 
                 default:
@@ -1649,6 +1654,87 @@ namespace NTwewyDbGenerator
 
             Builder.AppendLine("        };");
             File.WriteAllText("output_dictionary_iddic.cs", Builder.ToString());
+        }
+
+        public static void GenerateDiveData()
+        {
+            string dive_json = File.ReadAllText("Dive.txt");
+            dynamic array_dive = JsonConvert.DeserializeObject(dive_json);
+
+            StringBuilder Builder = new StringBuilder();
+            Builder.AppendLine("        private readonly Dictionary<uint, Dive> NagiDives = new Dictionary<uint, Dive>()");
+            Builder.AppendLine("        {");
+
+            foreach (var diveData in array_dive.mTarget)
+            {
+                /*		"mId": 10400,
+		"mBelong": 14,
+		"mMapEnvParam": "DiveMapEnv_TypeRage",
+		"mEmotionalType": 2,
+		"mBattle": 9994,
+		"mDifficultyLevel": 9,
+		"mTimeLimit": 180,
+		"mGold": 31,
+		"mSilver": 43,
+		"mBronze": 180,
+		"mGoldItem": -1,
+		"mGoldFrendPoint": 2,
+		"mSilverItem": -1,
+		"mSilverFrendPoint": 2,
+		"mBronzeItem": -1,
+		"mBronzeFrendPoint": 2,
+		"mSaveIndex": 0*/
+
+                int id = (int)diveData.mId;
+                int belong = (int)diveData.mBelong;
+                string mapenvparam = (string)diveData.mMapEnvParam;
+                int emotionalType = (int)diveData.mEmotionalType;
+                int battle = (int)diveData.mBattle;
+                int difficultyLevel = (int)diveData.mDifficultyLevel;
+                int timeLimit = (int)diveData.mTimeLimit;
+                int gold = (int)diveData.mGold;
+                int silver = (int)diveData.mSilver;
+                int bronze = (int)diveData.mBronze;
+                int golditem = (int)diveData.mGoldItem;
+                int goldFp = (int)diveData.mGoldFrendPoint;
+                int silveritem = (int)diveData.mSilverItem;
+                int silverFp = (int)diveData.mSilverFrendPoint;
+                int bronzeitem = (int)diveData.mBronzeItem;
+                int bronzeFp = (int)diveData.mBronzeFrendPoint;
+                int saveIndex = (int)diveData.mSaveIndex;
+
+                string Constructor = string.Format("new Dive({0}, {1}, \"{2}\", {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16})",
+                    id,
+                    belong,
+                    mapenvparam,
+                    emotionalType,
+                    battle,
+                    difficultyLevel,
+                    timeLimit,
+                    gold,
+                    silver,
+                    bronze,
+                    golditem,
+                    goldFp,
+                    silveritem,
+                    silverFp,
+                    bronzeitem,
+                    bronzeFp,
+                    saveIndex
+                    );
+
+                Builder.Append("            { ");
+                Builder.Append(id);
+                Builder.Append(", ");
+                Builder.Append(Constructor);
+
+                Builder.AppendLine(" },");
+
+            }
+
+            Builder.AppendLine("        };");
+            File.WriteAllText("output_dictionary_dive.cs", Builder.ToString());
+
         }
     }
 }
